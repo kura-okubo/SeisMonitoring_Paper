@@ -1,0 +1,5 @@
+.DS_Store
+Examples/.DS_Store
+Examples/ex_*_INPUT
+Examples/ex_*_OUTPUT
+Examples/ex_*

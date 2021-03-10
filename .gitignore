@@ -1,5 +1,6 @@
 .DS_Store
 Examples/.DS_Store
-Examples/ex_*_INPUT
 Examples/ex_*_OUTPUT
-Examples/ex_*
+Examples/ex_*_INPUT/*.txt
+Examples/ex_*_INPUT/nodes.*
+#Examples/ex_*

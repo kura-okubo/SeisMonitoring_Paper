@@ -3,9 +3,8 @@ using SeisMonitoring
 # This script initiate project
 project_name = "ex_download_data"
 project_inputdir="./"
-project_outputdir="./"
-
-# project_outputdir="/scratch1/07208/kokubo09/BP_v25-28"
+#project_outputdir="./"
+project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
 
 master_param="./mainparam_master.jl"
 

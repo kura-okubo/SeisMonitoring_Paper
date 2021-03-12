@@ -40,7 +40,7 @@ set_parameter(fo_mainparam, "requeststation_file",  station_fodir*"/$(project_na
 # set_parameter(fo_mainparam, "IsWhitening",  "true")
 # set_parameter(fo_mainparam, "freqmin_whiten",  "0.1")
 # set_parameter(fo_mainparam, "freqmax_whiten",  "4.0")
-set_parameter(fo_mainparam, "cc_RawData_path",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_removeeq_raw_OUTPUT/seismicdata/seisremoveeq")
+set_parameter(fo_mainparam, "cc_RawData_path",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_removeeq_whiten_OUTPUT/seismicdata/seisremoveeq")
 set_parameter(fo_mainparam, "cc_normalization",  "none")
 set_parameter(fo_mainparam, "corr_type",  "CC")
 set_parameter(fo_mainparam, "pairs_option",  "all")

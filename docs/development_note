@@ -1,0 +1,5 @@
+2021.03.15 developped const_slice_codawindow(). To implement it, we added the following parameter in the
+mainparam_master.jl
+
+"coda_init_factor"      => ("2.0", Float64, "[s] Coda window starts from coda_init_factor*dist/vel."),
+"coda_minlen_factor"    => ("5.0", Float64, "[s] Minimumlength is determined by this factor * (1/fm, period of cc) * fs points."),

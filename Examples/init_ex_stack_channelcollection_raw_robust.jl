@@ -3,8 +3,8 @@ using SeisMonitoring
 # This script initiate project
 project_name = "ex_cc_stack_channelcollection_raw_robust"
 project_inputdir="./"
-project_outputdir="./"
-# project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
+# project_outputdir="./"
+project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
 
 master_param="./mainparam_master.jl"
 

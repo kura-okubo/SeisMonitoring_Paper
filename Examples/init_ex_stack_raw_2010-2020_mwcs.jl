@@ -1,9 +1,9 @@
 using SeisMonitoring
 
 # This script initiate project
-project_name = "ex_cc_raw_robust"
+project_name = "ex_stack_raw_2010-2020_mwcs"
 project_inputdir="./"
-#project_outputdir="./"
+# project_outputdir="./"
 project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
 
 master_param="./mainparam_master.jl"
@@ -36,17 +36,15 @@ set_parameter(fo_mainparam, "project_inputdir", project_inputdir*"/$(project_nam
 set_parameter(fo_mainparam, "project_outputdir", project_outputdir*"/$(project_name)_OUTPUT")
 set_parameter(fo_mainparam, "requeststation_file",  station_fodir*"/$(project_name).jld2")
 # the rest of parameters should be modified case by case.
-# set_parameter(fo_mainparam, "RawData_path",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_download_data_OUTPUT/seismicdata/rawseismicdata")
-# set_parameter(fo_mainparam, "IsWhitening",  "true")
-# set_parameter(fo_mainparam, "freqmin_whiten",  "0.1")
-# set_parameter(fo_mainparam, "freqmax_whiten",  "4.0")
-set_parameter(fo_mainparam, "cc_RawData_path",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_removeeq_raw_OUTPUT/seismicdata/seisremoveeq")
-set_parameter(fo_mainparam, "cc_normalization",  "none")
-set_parameter(fo_mainparam, "corr_type",  "CC")
-set_parameter(fo_mainparam, "pairs_option",  "all")
-set_parameter(fo_mainparam, "chanpair_type",  "all")
-set_parameter(fo_mainparam, "data_contents_fraction",  "0.5")
-set_parameter(fo_mainparam, "IsOnebit",  "false")
-set_parameter(fo_mainparam, "smoothing_windowlength",  "7")
-set_parameter(fo_mainparam, "cc_bpfilt_method",  "Wavelet")
-set_parameter(fo_mainparam, "stack_method",  "robust")
+set_parameter(fo_mainparam, "stack_RawData_dir",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_cc_raw_OUTPUT/cc")
+set_parameter(fo_mainparam, "stack_method",  "selective")
+set_parameter(fo_mainparam, "collect_stationpairs",  "false")
+set_parameter(fo_mainparam, "compute_reference",  "true")
+set_parameter(fo_mainparam, "compute_shorttimestack",  "true")
+set_parameter(fo_mainparam, "reference_starttime",  "2010-01-01T00:00:00")
+set_parameter(fo_mainparam, "reference_endtime",  "2020-01-01T00:00:00")
+set_parameter(fo_mainparam, "keep_corrtrace",  "true")
+set_parameter(fo_mainparam, "measurement_method",  "mwcs")
+set_parameter(fo_mainparam, "mwcs_window_length",  "6.0")
+set_parameter(fo_mainparam, "mwcs_window_step",  "3.0")
+set_parameter(fo_mainparam, "mwcs_smoothing_half_win",  "5")

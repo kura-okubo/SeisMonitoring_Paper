@@ -1,7 +1,7 @@
 using SeisMonitoring
 
 # This script initiate project
-project_name = "ex_stack_raw_2017-2020_mwcs"
+project_name = "ex_stack_raw_2017-2020_stretching"
 project_inputdir="./"
 # project_outputdir="./"
 project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
@@ -43,7 +43,7 @@ set_parameter(fo_mainparam, "compute_reference",  "true")
 set_parameter(fo_mainparam, "compute_shorttimestack",  "true")
 set_parameter(fo_mainparam, "reference_starttime",  "2017-01-01T00:00:00")
 set_parameter(fo_mainparam, "reference_endtime",  "2020-01-01T00:00:00")
-set_parameter(fo_mainparam, "keep_corrtrace",  "true")
+set_parameter(fo_mainparam, "keep_corrtrace",  "false")
 set_parameter(fo_mainparam, "measurement_method",  "stretching")
 set_parameter(fo_mainparam, "dvv_stretching_range",  "0.02")
 set_parameter(fo_mainparam, "dvv_stretching_Ntrial",  "201")

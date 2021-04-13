@@ -4,7 +4,7 @@
 #SBATCH -J BP_SeisMonitoring
 #SBATCH -N 10
 #SBATCH --ntasks-per-node 48
-#SBATCH -t 10:00:00
+#SBATCH -t 1:00:00
 #SBATCH -o /home1/07208/kokubo09/tmpprojects/SeisMonitoring_Paper/Examples/ex_stack_raw_robust_2010-2020_stretching_INPUT/out_%j.txt
 #SBATCH -e /home1/07208/kokubo09/tmpprojects/SeisMonitoring_Paper/Examples/ex_stack_raw_robust_2010-2020_stretching_INPUT/err_%j.txt
 #----------------------------------------------------

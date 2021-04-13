@@ -5,4 +5,5 @@ Examples/ex_*_INPUT/*.txt
 Examples/ex_*_INPUT/nodes.*
 Examples/ex_download_data
 Utils/runcorr_parallel*
+OUTPUT/*
 #Examples/ex_*

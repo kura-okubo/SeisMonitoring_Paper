@@ -3,3 +3,7 @@ mainparam_master.jl
 
 "coda_init_factor"      => ("2.0", Float64, "[s] Coda window starts from coda_init_factor*dist/vel."),
 "coda_minlen_factor"    => ("5.0", Float64, "[s] Minimumlength is determined by this factor * (1/fm, period of cc) * fs points."),
+
+2021.04.28 developped max_dt in mwcs(). To implement it, we added the following parameter in the mainparam_master.jl
+"mwcs_max_dt"      => ("1.0", Float64, "[s] Max dt in mwcs.")
+

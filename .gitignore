@@ -4,6 +4,7 @@ Examples/ex_*_OUTPUT
 Examples/ex_*_INPUT/*.txt
 Examples/ex_*_INPUT/nodes.*
 Examples/ex_download_data
+Examples/ex_cc_*_INPUT/outlog
 Utils/runcorr_parallel*
 OUTPUT/*
 #Examples/ex_*

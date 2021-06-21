@@ -1,4 +1,4 @@
-#Save at 2020-12-29T02:37:28 by KuramanoMacBook-Pro.local
+#Save at 2021-06-21T10:24:04 by kokubo.bosai.go.jp
 using Dates, DataStructures
 InputDict = OrderedDict(
 "project_name"  => ("mainmaster", String, "project name."),
@@ -54,7 +54,7 @@ InputDict = OrderedDict(
 "cc_medianmute_min"  => ("0.1", Float64, "Advanced: Threshold factor of median mute within cc_time_unit. NCF is removed if maximum(abs.(corr[:,i])) < cc_medianmute_min * median(maximum(abs.(corr)), dims=1)"),
 "IsPreStack"  => ("true", Bool, "Advanced: Pre-stacking corrdata within each cc_time_unit when assembling the corrdata for the sake of saving memory use."),
 "timechunk_increment"  => ("5", Int64, "Advanced: Number of time chunk increment for parallelization: large number is more efficient, but increase memory use."),
-"stack_RawData_dir"  => ("/home1/07208/kokubo09/scratch/BP_v23_OUTPUT/cc", String, "\"default\" or absolute/relative path to cc directory. \"default\" links to project OUTPUT/cc."),
+"stack_RawData_dir"  => ("stackdir", String, "\"default\" or absolute/relative path to cc directory. \"default\" links to project OUTPUT/cc."),
 "use_local_tmpdir"  => ("true", Bool, "True if using local /tmp diretory. Please set true when running in cluster to avoid massive file I/O."),
 "stack_method"  => ("selective", String, "stacking method: linear, selective, robust, pws, robustpws are available"),
 "collect_stationpairs"  => ("false", Bool, "true if correct station pairs. Stacking without this process does not work."),
@@ -82,7 +82,7 @@ InputDict = OrderedDict(
 "nondim_codamaxlag"  => ("60.0", Float64, "Deprecated: coda max lag where kinetic energy is evaluated."),
 "coda_energy_threshold"  => ("-1.0", Float64, "Deprecated: Advanced: Threshold for attenuation decay."),
 "IsAlternateRefChannel"  => ("true", Bool, "Advanced: Allow for using alternative station channel for reference. (e.g. BP.LCCB..BP1-BP.MMNB..BP1 is used as reference for BP.LCCB..SP1-BP.MMNB..SP1)"),
-"keep_corrtrace"  => ("true", Bool, "Advanced: Keep corr trace in CorrData if true. (require the strage to save corrs.)"),
+"keep_corrtrace"  => ("false", Bool, "Advanced: Keep corr trace in CorrData if true. (require the strage to save corrs.)"),
 "measurement_method"  => ("stretching", String, "Stretching method for measuring dv/v and dQ^{-1}. \"stretching\",\"mwcs\",\"wcc\",\"dtw\",\"dualstretching\" "),
 "mwcs_window_length"  => ("6.0", Float64, "[s] The moving window length"),
 "mwcs_window_step"  => ("3.0", Float64, "[s] The step to jump for the moving window."),
@@ -91,4 +91,6 @@ InputDict = OrderedDict(
 "stretch_debugplot"  => ("false", Bool, "If plot debug figures for streching."),
 "dvv_stretching_range"  => ("0.02", Float64, "Advanced: dvv stretching trial range for dvv (+- abs(dvv_stretching_range))."),
 "dvv_stretching_Ntrial"  => ("201", Int64, "Advanced: dvv stretching trial number for dvv."),
+"geometricalspreading_α"  => ("0.5", Float64, "Advanced: geometrical spreading coefficient to compute Qcinv."),
+"computedqq_smoothing_half_win"  => ("10", Float64, "MWCS smoothing half windown length."),
 )

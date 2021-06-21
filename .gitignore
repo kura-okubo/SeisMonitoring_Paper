@@ -9,3 +9,4 @@ Utils/runcorr_parallel*
 OUTPUT/*
 #Examples/ex_*
 Tutorial
+Examples/archive*

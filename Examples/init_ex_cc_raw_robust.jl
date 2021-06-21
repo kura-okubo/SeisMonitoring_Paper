@@ -36,10 +36,6 @@ set_parameter(fo_mainparam, "project_inputdir", project_inputdir*"/$(project_nam
 set_parameter(fo_mainparam, "project_outputdir", project_outputdir*"/$(project_name)_OUTPUT")
 set_parameter(fo_mainparam, "requeststation_file",  station_fodir*"/$(project_name).jld2")
 # the rest of parameters should be modified case by case.
-# set_parameter(fo_mainparam, "RawData_path",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_download_data_OUTPUT/seismicdata/rawseismicdata")
-# set_parameter(fo_mainparam, "IsWhitening",  "true")
-# set_parameter(fo_mainparam, "freqmin_whiten",  "0.1")
-# set_parameter(fo_mainparam, "freqmax_whiten",  "4.0")
 set_parameter(fo_mainparam, "cc_RawData_path",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_removeeq_raw_OUTPUT/seismicdata/seisremoveeq")
 set_parameter(fo_mainparam, "cc_normalization",  "none")
 set_parameter(fo_mainparam, "corr_type",  "CC")

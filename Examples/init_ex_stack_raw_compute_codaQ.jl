@@ -1,7 +1,7 @@
 using SeisMonitoring
 
 # This script initiate project
-project_name = "ex_stack_raw_2010-2020_mwcs"
+project_name = "ex_stack_raw_2010-2020_stretching"
 project_inputdir="./"
 # project_outputdir="./"
 project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
@@ -44,8 +44,9 @@ set_parameter(fo_mainparam, "compute_shorttimestack",  "true")
 set_parameter(fo_mainparam, "reference_starttime",  "2010-01-01T00:00:00")
 set_parameter(fo_mainparam, "reference_endtime",  "2020-01-01T00:00:00")
 set_parameter(fo_mainparam, "keep_corrtrace",  "false")
-set_parameter(fo_mainparam, "measurement_method",  "mwcs")
-set_parameter(fo_mainparam, "mwcs_window_length",  "6.0")
-set_parameter(fo_mainparam, "mwcs_window_step",  "3.0")
-set_parameter(fo_mainparam, "mwcs_smoothing_half_win",  "5")
-set_parameter(fo_mainparam, "mwcs_max_dt",  "1.0")
+set_parameter(fo_mainparam, "stretch_debugplot",  "true")
+set_parameter(fo_mainparam, "measurement_method",  "compute_dvvdqq")
+set_parameter(fo_mainparam, "dvv_stretching_range",  "0.02")
+set_parameter(fo_mainparam, "dvv_stretching_Ntrial",  "201")
+set_parameter(fo_mainparam, "geometricalspreading_α",  "0.5")
+set_parameter(fo_mainparam, "computedqq_smoothing_half_win",  "10")

@@ -1,7 +1,7 @@
 using SeisMonitoring
 
 # This script initiate project
-project_name = "ex_stack_raw_2010-2020_mwcs"
+project_name = "ex_cc_stack_channelcollection_raw_robust"
 project_inputdir="./"
 # project_outputdir="./"
 project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"
@@ -36,16 +36,7 @@ set_parameter(fo_mainparam, "project_inputdir", project_inputdir*"/$(project_nam
 set_parameter(fo_mainparam, "project_outputdir", project_outputdir*"/$(project_name)_OUTPUT")
 set_parameter(fo_mainparam, "requeststation_file",  station_fodir*"/$(project_name).jld2")
 # the rest of parameters should be modified case by case.
-set_parameter(fo_mainparam, "stack_RawData_dir",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_cc_raw_OUTPUT/cc")
-set_parameter(fo_mainparam, "stack_method",  "selective")
-set_parameter(fo_mainparam, "collect_stationpairs",  "false")
-set_parameter(fo_mainparam, "compute_reference",  "true")
-set_parameter(fo_mainparam, "compute_shorttimestack",  "true")
-set_parameter(fo_mainparam, "reference_starttime",  "2010-01-01T00:00:00")
-set_parameter(fo_mainparam, "reference_endtime",  "2020-01-01T00:00:00")
-set_parameter(fo_mainparam, "keep_corrtrace",  "false")
-set_parameter(fo_mainparam, "measurement_method",  "mwcs")
-set_parameter(fo_mainparam, "mwcs_window_length",  "6.0")
-set_parameter(fo_mainparam, "mwcs_window_step",  "3.0")
-set_parameter(fo_mainparam, "mwcs_smoothing_half_win",  "5")
-set_parameter(fo_mainparam, "mwcs_max_dt",  "1.0")
+set_parameter(fo_mainparam, "stack_RawData_dir",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_cc_raw_withoutremovalEQ_OUTPUT/cc")
+set_parameter(fo_mainparam, "collect_stationpairs",  "true")
+set_parameter(fo_mainparam, "compute_reference",  "false")
+set_parameter(fo_mainparam, "compute_shorttimestack",  "false")

@@ -37,7 +37,6 @@ set_parameter(fo_mainparam, "project_outputdir", project_outputdir*"/$(project_n
 set_parameter(fo_mainparam, "requeststation_file",  station_fodir*"/$(project_name).jld2")
 # the rest of parameters should be modified case by case.
 set_parameter(fo_mainparam, "stack_RawData_dir",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_cc_raw_robust_OUTPUT/cc")
-set_parameter(fo_mainparam, "stack_method",  "selective")
 set_parameter(fo_mainparam, "collect_stationpairs",  "true")
 set_parameter(fo_mainparam, "compute_reference",  "false")
 set_parameter(fo_mainparam, "compute_shorttimestack",  "false")

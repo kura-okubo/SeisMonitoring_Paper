@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# juliapath=$HOME/packages/julia-1.5.3/bin/julia
-juliapath=/Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia
+ juliapath=$HOME/packages/julia-1.5.3/bin/julia
+#juliapath=/Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia
 # ex download
 $juliapath init_ex_download.jl
 

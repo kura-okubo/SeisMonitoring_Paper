@@ -1,7 +1,7 @@
 using SeisMonitoring
 
 # This script initiate project
-project_name = "ex_stack_raw_2010-2020_stretching"
+project_name = "ex_stack_raw_compute_codaQ"
 project_inputdir="./"
 # project_outputdir="./"
 project_outputdir="/scratch1/07208/kokubo09/SeisMonitoring_Paper"

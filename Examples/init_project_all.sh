@@ -17,7 +17,7 @@ $juliapath init_ex_cc_raw_withoutremovalEQ.jl
 
 # ex stack channel collection
 $juliapath init_ex_stack_channelcollection_raw.jl
-$juliapath init_ex_stack_channelcollection_raw_normalized.jl
+$juliapath init_ex_stack_channelcollection_normalized.jl
 $juliapath init_ex_stack_channelcollection_raw_robust.jl
 $juliapath init_ex_stack_channelcollection_raw_withoutremovalEQ.jl
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #----------------------------------------------------
-#SBATCH -p normal
+#SBATCH -p development
 #SBATCH -J BP_SeisMonitoring
 #SBATCH -N 10
 #SBATCH --ntasks-per-node 48

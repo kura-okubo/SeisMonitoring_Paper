@@ -92,5 +92,5 @@ InputDict = OrderedDict(
 "dvv_stretching_range"  => ("0.02", Float64, "Advanced: dvv stretching trial range for dvv (+- abs(dvv_stretching_range))."),
 "dvv_stretching_Ntrial"  => ("201", Int64, "Advanced: dvv stretching trial number for dvv."),
 "geometricalspreading_α"  => ("0.5", Float64, "Advanced: geometrical spreading coefficient to compute Qcinv."),
-"computedqq_smoothing_half_win"  => ("10", Float64, "MWCS smoothing half windown length."),
+"computedqq_smoothing_windowlength"  => ("10.0", Float64, "[s] smoothing windown length to compute envelope for compute_dvvdqq."),
 )

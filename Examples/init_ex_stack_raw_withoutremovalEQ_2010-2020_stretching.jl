@@ -38,7 +38,7 @@ set_parameter(fo_mainparam, "requeststation_file",  station_fodir*"/$(project_na
 # the rest of parameters should be modified case by case.
 set_parameter(fo_mainparam, "stack_RawData_dir",  "/scratch1/07208/kokubo09/SeisMonitoring_Paper/ex_cc_raw_withoutremovalEQ_OUTPUT/cc")
 set_parameter(fo_mainparam, "stack_method",  "selective")
-set_parameter(fo_mainparam, "collect_stationpairs",  "true")
+set_parameter(fo_mainparam, "collect_stationpairs",  "false")
 set_parameter(fo_mainparam, "compute_reference",  "true")
 set_parameter(fo_mainparam, "compute_shorttimestack",  "true")
 set_parameter(fo_mainparam, "reference_starttime",  "2010-01-01T00:00:00")

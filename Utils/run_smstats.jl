@@ -9,5 +9,7 @@ if string(ARGS[3]) == "stretching"
 	smstats_read_stretching(shorttimestackdir, fodir, starttime, endtime, foname=string(ARGS[4]))
 elseif string(ARGS[3]) == "mwcs"
 	smstats_read_mwcs(shorttimestackdir, fodir, starttime, endtime, foname=string(ARGS[4]))
+elseif string(ARGS[3]) == "dvvdqq"
+	smstats_read_computedvvdqq(shorttimestackdir, fodir, starttime, endtime, foname=string(ARGS[4]))
 end   
 

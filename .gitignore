@@ -1,12 +1,21 @@
 .DS_Store
 Examples/.DS_Store
-Examples/ex_*_OUTPUT
+
+# Ignore raw inpute file, but track only tar zipped job output file
+# job output file
 Examples/ex_*_INPUT/*.txt
+# job node file
 Examples/ex_*_INPUT/nodes.*
-Examples/ex_download_data
-Examples/ex_cc_*_INPUT/outlog
-Utils/runcorr_parallel*
-OUTPUT/*
-#Examples/ex_*
+# job parallel files for cross-correlation, which can be reproduced with running make_slurmbatch_parallel.jl
+Examples/ex_*_INPUT/run_slurm
+# temporal output directory
+Examples/ex_*_OUTPUT
+# Output for scaling of parallelization is tar zipped.
+Utils/Scaling
+
+# OUTPUT csv files will be archived in another cloud strage
+OUTPUT*/*
+OUTPUT_master.tar
+
 Tutorial
 Examples/archive*

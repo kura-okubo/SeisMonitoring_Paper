@@ -61,7 +61,6 @@ gmt begin map_parkfield eps
 	gmt psxy parkfield_hypo.txt -JM${size} -R${range} -Sa0.5 -W.5,black -G${hypocolor}
 	gmt psxy sansimeon_hypo.txt -JM${size} -R${range} -Sa0.5 -W.5,black -G${hypocolor}
 	gmt psxy villages.txt -JM${size} -R${range} -Ss0.3 -W.5,0-0-0 -Ggray
-	gmt psxy SHmax_arrow.txt -JM${size} -R${range} -Sv0.2+s+e+a60 -W.5,0-0-0 -Gblack
 
 	# inset of california
 	gmt inset begin -DjTR+w4/4.6 -F+gwhite+p0.7

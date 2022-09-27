@@ -2,7 +2,7 @@
 
 Script to plot the map on Parkfield and BP network.
 
-To superimpose the topography on the map, the `grd` files are needed. The fault, ruptures and LFE events are obtained from the references listed below. The additional scripts are available to compile those data upon request.
+To superimpose the topography on the map, the `grd` files are needed. The fault, ruptures and LFE events are obtained from the references listed below. The additional scripts to compile those data are available upon request.
 
 To plot the data, run `sh plot_map_introduction_Parkfield.sh`.
 

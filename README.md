@@ -1,10 +1,12 @@
 # SeisMonitoring Paper
 
-This repository contains the examples for the use of SeisMonitoring.jl.
+This repository contains
+1. the examples for the use of SeisMonitoring.jl to perform the processing of ambient seismic noise.
+2. scripts to post-process the data and to plot the figures.
 
 ## Case study
 
-We perform following case study to investigate the effect of each process on the dv/v time history.
+We performed the following case study to investigate the effect of each process flow on the dv/v time history using [TACC FRONTERA](https://frontera-portal.tacc.utexas.edu).
 
 | id |remove eq|normalization |method| reference period |
 |---|---|---|---|---|
@@ -19,7 +21,13 @@ We perform following case study to investigate the effect of each process on the
 |09| yes | no | robust stuck + stretching | 2010-2020 |
 |10| yes | no | compute coda Q | 2010-2020 |
 
-## How to initiate projects
+We also conducted the case study in our local workstation at UW.
+
+| id |remove eq|normalization |method| reference period |
+|---|---|---|---|---|
+|11| yes | no | stretching | 2010-2022 |
+
+### How to initiate projects
 To conduct the casestudy listed as above, please initiate projects and run processes as following:
 
 1. Move to `Examples` and run `sh init_project_all.sh`.
@@ -40,6 +48,17 @@ To conduct the casestudy listed as above, please initiate projects and run proce
 
 > The stacked CorrData has the measurements in its misc (`C.misc`). `run_smstats.jl` gathers the measurements from stacked corrdata and output in csv table for post processing.
 
-## Notebooks to process outputs & plot figures
+## Post Processing
 
-*Under construction!*
+`Post` contains the scripts and notebooks for the followings:
+
+1. Data availability
+2. Compute dv/v with channel weighting
+3. MCMC inversion of dv/v model parameters
+
+## Plot Figures
+
+`Figures` contains the scripts to plot
+1. Map of BP network
+2. Spectrogram of noise
+3. Statistical analysis of model parameters associated with dv/v

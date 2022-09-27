@@ -4,6 +4,7 @@ Examples/.DS_Store
 # Ignore raw inpute file, but track only tar zipped job output file
 # job output file
 Examples/ex_*_INPUT/*.txt
+Examples/ex_*_INPUT/*.out
 # job node file
 Examples/ex_*_INPUT/nodes.*
 # job parallel files for cross-correlation, which can be reproduced with running make_slurmbatch_parallel.jl

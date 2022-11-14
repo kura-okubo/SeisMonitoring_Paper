@@ -18,6 +18,13 @@ Utils/Scaling
 OUTPUT*/*
 OUTPUT_master.tar
 
+# Post process
+Post/ModelFit/data
+Post/ModelFit/figure
+Post/ModelFit/processed_data
+.ipynb_checkpoints
+__pycache__
+
 Tutorial
 Examples/archive*
 

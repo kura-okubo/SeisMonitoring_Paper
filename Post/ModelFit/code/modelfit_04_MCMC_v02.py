@@ -67,7 +67,7 @@ if __name__ == '__main__':
     h5_id = 1
 
     # select the number of iteration during the MCMC inversion
-    nsteps = 5000#30000
+    nsteps = 10000#30000
 
     # set initial value and boundaries of the model parameters
     # format is: (initial value, [vmin, vmax])
@@ -75,15 +75,15 @@ if __name__ == '__main__':
     modelparam = {
                 "a0"            : (0.0, [-1.0, 1.0]), # offset
                 "p1"            : (0.01, [-np.inf, np.inf]), # scale of GWL
-                "a_precip"      : (1e-2, [0, 0.1]), # delay in GWL
+                "a_precip"      : (1e-2, [0, 1.0]), # delay in GWL [1/day]
                 "p2"            : (0.01, [-np.inf, np.inf]), # scale of Temp
                 "t_shiftdays"   : (7, [0, 180]), # shift of temp in days
                 "S1"            : (0.03, [0.0, 0.5]), # scale in coseimic change at SS NOTE: the vmax is assigned as the factor with S1
-                "log10tmin1"    : (0, [-2, 10]), # healing tmin duration
-                "log10tmax1"    : (np.log10(1e7), [0.0, 12]), # healing tmax duration
+                "log10tmin1"    : (0, [-1, 7.98]), # healing tmin duration
+                "log10tmax1"    : (np.log10(1e8), [7.5, 12]), # healing tmax duration # ranging from 1 year to 30000 years
                 "S2"            : (0.08, [0.0, 1.0]), # scale in coseimic change at PF
-                "log10tmin2"    : (0, [-2, 10]), # healing tmin duration
-                "log10tmax2"    : (np.log10(2.67e8), [0.0, 12]), # healing tmax duration
+                "log10tmin2"    : (0, [-1, 7.98]), # healing tmin duration
+                "log10tmax2"    : (np.log10(2.67e8), [7.5, 12]), # healing tmax duration # ranging from 1 year to 30000 years
                 "b_lin"         : (0.0, [-np.inf, np.inf]), # slope of linear trend
                 "log_f"         : (0.0, [-10, 10]), # magnitude of uncertainity
                 }
@@ -124,9 +124,9 @@ if __name__ == '__main__':
     uniform_tvec = np.array([datetime.datetime.utcfromtimestamp(x) for x in uniform_tvec_unix])
     unix_tvec = np.array([x.timestamp() for x in uniform_tvec])
 
+    modelparam["averagestack_step"] = averagestack_step
     modelparam["uniform_tvec"] = uniform_tvec
     modelparam["unix_tvec"] = unix_tvec
-
     #---Trim the time series from the starttime to the endtime---#
     fitting_period_ind = np.where((uniform_tvec >= starttime) & (uniform_tvec <= endtime))[0]
     # print(np.where((uniform_tvec >= starttime) & (uniform_tvec <= endtime)))
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     #------------------------------------------------------#
 
     # select station ids for debug
-    stationids = [26, 40, 46]
+    stationids = [40, 13, 26, 32]
 
     # for stationpair in tqdm(stationpairs):
 
@@ -195,7 +195,7 @@ if __name__ == '__main__':
 
         if os.path.exists(foname):
             print(os.path.basename(foname) + "exists. Skipping.")
-            continue;
+            # continue;
 
         dvv_data = np.array(fi["dvv/{}/dvv".format(stationpair)])
         err_data = np.array(fi["dvv/{}/err".format(stationpair)])
@@ -215,8 +215,9 @@ if __name__ == '__main__':
         with Pool() as pool:
             sampler = emcee.EnsembleSampler(
                             modelparam["nwalkers"], modelparam["ndim"], log_probability,
-                            moves=[(emcee.moves.StretchMove(), 0.5),
-                                     (emcee.moves.DESnookerMove(), 0.5),], # Reference of Move: https://github.com/lermert/cdmx_dvv/blob/main/m.py
+                            # moves=[(emcee.moves.StretchMove(), 0.5),
+                            #          (emcee.moves.DESnookerMove(), 0.5),], # Reference of Move: https://github.com/lermert/cdmx_dvv/blob/main/m.py
+                            moves=emcee.moves.StretchMove(),
                             kwargs=(modelparam),
                             pool=pool)
 

@@ -19,12 +19,8 @@ import corner
 from multiprocessing import Pool, cpu_count
 
 #---Initialization---#
-def get_init_param(**modelparam):
-    """
-    return the pos array for the initial chains of MCMC
-    """
-    modelcase = modelparam["modelcase"]
-    nwalkers = modelparam["nwalkers"]
+
+def get_keys(modelcase):
 
     if modelcase.lower() == "base":
         # model without linear trend term
@@ -42,6 +38,18 @@ def get_init_param(**modelparam):
         print(f"{modelcase} is not defined. Please check the modelcase.\n")
         exit(1)
 
+    return keys
+
+
+def get_init_param(**modelparam):
+    """
+    return the pos array for the initial chains of MCMC
+    """
+
+    keys = get_keys(modelparam["modelcase"])
+
+    nwalkers = modelparam["nwalkers"]
+
     ndim = len(keys)
     pos = [modelparam[x][0] for x in keys] + 1e-4 * np.random.randn(nwalkers, ndim)
 
@@ -51,9 +59,14 @@ def get_init_param(**modelparam):
 
 #---Model Components---#
 #1. ---Precipitation and ground water level change---#
-def SSW06(precip, phi, a): # originally developped in Julia by Tim Clements
+def SSW06(precip, phi, a, stackstep): # originally developped in Julia by Tim Clements
+    """
+    note: the unit of a depends on the time step of precipitation data [1/(day_stackstep)]
+    , so automatically correct unit to 1/day.
+    """
     Nprecip = len(precip)
-    expij = [np.exp(-a*x) for x in range(Nprecip)]
+    # expij = [np.exp(-a*x) for x in range(Nprecip)]
+    expij = [np.exp(-(a*stackstep)*x) for x in range(Nprecip)]
     GWL = np.convolve(expij, precip - np.mean(precip), mode='full')[:Nprecip] / phi
     return GWL
 
@@ -61,9 +74,10 @@ def compute_GWLchange(a_SSW06, **modelparam):
     """
     compute the GWL change with demean
     """
+    # print(a_SSW06, modelparam["a_precip"])
     fitting_period_ind = modelparam["fitting_period_ind"]
     phi = 0.05   # porosity is fixed
-    GWL = SSW06(np.array(modelparam["precip"])/1e3, phi, a_SSW06)
+    GWL = SSW06(np.array(modelparam["precip"])/1e3, phi, a_SSW06, modelparam["averagestack_step"])
     GWL = GWL - np.mean(GWL)
     return GWL[fitting_period_ind]
 
@@ -79,6 +93,7 @@ def compute_tempshift(shift_days, smooth_winlen = 6, **modelparam):
     unix_tvec          = modelparam["unix_tvec"]
     fitting_period_ind = modelparam["fitting_period_ind"]
     temperature        = modelparam["CAVG"] # temperature in degree Celsius
+    # print(shift_days, modelparam["t_shiftdays"])
 
     smooth_temp = np.convolve(temperature, np.ones(smooth_winlen)/smooth_winlen, mode='same')
     T_shift = np.interp(unix_tvec - shift_days*86400, unix_tvec, smooth_temp)
@@ -245,7 +260,6 @@ def log_prior(theta, **modelparam):
     # print(modelparam)
     keys      = modelparam["keys"]
 
-    # find S2 for the boundary
     S2 = theta[keys.index("S2")]
 
     #2. evaluate the boundaries
@@ -254,14 +268,24 @@ def log_prior(theta, **modelparam):
         vmin, vmax = modelparam[key][1]
         val = theta[i]
 
+        # constraint on the coseismic drop in dv/v
         if key == "S1": # special case for the boundary
             # apply boundaries associated with the magnitude of S1
             if val < vmin or vmax * S2 < val:
                 return -np.inf
-
         else:
             if val < vmin or vmax < val:
                 return -np.inf
+
+    # constraint on the tmin and tmax
+    log10tmin1 = theta[keys.index("log10tmin1")]
+    log10tmax1 = theta[keys.index("log10tmax1")]
+    log10tmin2 = theta[keys.index("log10tmin2")]
+    log10tmax2 = theta[keys.index("log10tmax2")]
+
+    if (log10tmin1>=log10tmax1) or (log10tmin2>=log10tmax2):
+        return -np.inf
+
     # if all the trial parameters are within the boundaries, return 0.
     return 0
 

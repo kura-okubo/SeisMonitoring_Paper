@@ -51,18 +51,18 @@ for station in station_list
 
 			# load corrdata
 			C = t[key][freqkey]
-			
+
 
 			xcorr = C.corr
 			xcorr .*= DSP.tukey(Nlag, tukey_alpha) # apply tukey window
-			xcorr ./= Ndata # NOTE: the scaling is done with the Ndata, not Nlag by theory. 
+			xcorr ./= Ndata # NOTE: the scaling is done with the Ndata, not Nlag by theory.
 
 			# 4. shift the xcorr using fft shift to make the midpoint (n/2 or n-1/2) to be zero to avoid the flip of sign.
 			xcorr_shifted = DSP.fftshift(xcorr)
 
 			# compute rfft and scale with sampling rate
 			Sp = DSP.rfft(xcorr_shifted)
-			Spfreq = DSP.rfftfreq(Nlag, C.fs) 
+			Spfreq = DSP.rfftfreq(Nlag, C.fs)
 			Sp *= 2.0/C.fs # 2.0 is applied to preserve total power from the negative side
 
 
@@ -71,16 +71,16 @@ for station in station_list
 			# apply waterlevel to remove negative value due to numerical error
 			inds = findall(x -> x < waterlevel_PSD, real(Sp)[:, 1]) # apply waterlevel to remove negative values due to numerical error in FFT
 			Sp[inds] .= waterlevel_PSD + 0im
-			Sp_all[:, i] = real(Sp) 
+			Sp_all[:, i] = real(Sp)
 		end
 
 		close(t)
 
-		# Plot periodgram 
+		# Plot periodgram
 		Spfreq = DSP.rfftfreq(Nlag, fs)
 
 		ylimit = [0.1, 4.0]
-		yscale = :ln 
+		yscale = :ln
 
 		p = heatmap(tvec_all, Spfreq[2:end], DSP.Util.pow2db.(Sp_all[2:end, :]), ylabel="Frequency [Hz]",
 		# p = heatmap(10*log10.(Sp_all), ylabel="Frequency [Hz]",
@@ -106,7 +106,7 @@ for station in station_list
 		hl = hline!([0.9, 1.2], lw=1.0, ls=:dash, c="white", label="")
 
 		# vlines for earthquakes
-		vlines = [Dates.DateTime(2003, 12, 12), Dates.DateTime(2004, 9, 28), Dates.DateTime(2014, 8, 24)] 
+		vlines = [Dates.DateTime(2003, 12, 12), Dates.DateTime(2004, 9, 28), Dates.DateTime(2014, 8, 24)]
 		vl = vline!(vlines, lw=1.5, ls=:dot, c="white", label="")
 
 		p = plot!(size=(1000,500))
@@ -119,4 +119,3 @@ end
 # fmt = "png"
 # figname = joinpath(figdir, "$(netstachan_auto)")*".$(fmt)"
 # Plots.savefig(p, figname)
-

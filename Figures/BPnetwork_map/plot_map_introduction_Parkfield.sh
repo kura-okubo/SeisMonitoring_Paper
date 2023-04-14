@@ -47,9 +47,9 @@ gmt begin map_parkfield eps
 	gmt basemap -JM${size} -R${range} -Ba.2f0.1 -BWSNE+t"Parkfield" -Xc -Yc 
 
 	#plot topography
-	# for finame in grdn36w119 grdn36w120 grdn36w121 grdn36w122 grdn37w119 grdn37w120 grdn37w121 grdn37w122; do
-	# 	gmt grdimage ${finame}.grd -JM${size} -R${range} -C${cptfile} -I
-	# done
+	for finame in grdn36w119 grdn36w120 grdn36w121 grdn36w122 grdn37w119 grdn37w120 grdn37w121 grdn37w122; do
+		gmt grdimage ${finame}.grd -JM${size} -R${range} -C${cptfile} -I
+	done
 
 	gmt pscoast -JM${size} -R${range} -N2 -Dh -W1.0p,black -S${oceancolor} -L${scale}
 	gmt psxy historicalfaults.txt -JM${size} -R${range} -W2.0,${sanandreascolor}
@@ -60,7 +60,7 @@ gmt begin map_parkfield eps
 	gmt psxy gmt_BPnetwork.txt -JM${size} -R${range} -St0.4 -W1.0,0-0-0 -G${stationcolor}
 	gmt psxy parkfield_hypo.txt -JM${size} -R${range} -Sa0.5 -W.5,black -G${hypocolor}
 	gmt psxy sansimeon_hypo.txt -JM${size} -R${range} -Sa0.5 -W.5,black -G${hypocolor}
-	gmt psxy villages.txt -JM${size} -R${range} -Ss0.3 -W.5,0-0-0 -Ggray
+	# gmt psxy villages.txt -JM${size} -R${range} -Ss0.3 -W.5,0-0-0 -Ggray
 
 	# inset of california
 	gmt inset begin -DjTR+w4/4.6 -F+gwhite+p0.7

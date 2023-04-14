@@ -19,9 +19,13 @@ OUTPUT*/*
 OUTPUT_master.tar
 
 # Post process
-Post/ModelFit/data
-Post/ModelFit/figure
-Post/ModelFit/processed_data
+Post/ModelFit/data*
+Post/ModelFit/figure*
+Post/ModelFit/*_data
+Post/ModelFit/_*
+Post/ModelFit/code
+
+
 .ipynb_checkpoints
 __pycache__
 
@@ -29,3 +33,24 @@ Tutorial
 Examples/archive*
 
 Backup
+
+# Temporarily ignore the subproject directories
+Figures
+Appx/appxdata
+Appx/check_rawdata*
+Appx/evaluation_*
+Appx/plot_CCF
+Appx/Scaling_Frontera
+Appx/tremorsignal
+Appx/validation_*
+
+
+
+Figures
+Post/CumulativeStrain
+Post/DataAvailability/csv*
+Post/DataAvailability/figure*
+Pytags_PF_v00
+Post/Spectrogram/PSD*
+Post/Spectrogram/data
+Post/Spectrogram/*.tar.gz

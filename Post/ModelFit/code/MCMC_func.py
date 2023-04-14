@@ -14,7 +14,7 @@ from scipy import LowLevelCallable
 import matplotlib as mpl
 
 import emcee # MCMC sampler
-import corner
+# import corner
 
 from multiprocessing import Pool, cpu_count
 
@@ -24,15 +24,15 @@ def get_keys(modelcase):
 
     if modelcase.lower() == "base":
         # model without linear trend term
-        keys = ['a0', 'p1', 'a_precip', 'p2', 't_shiftdays',
+        keys = ['a0', 'p1', 'a_{precip}', 'p2', 't_{shiftdays}',
                 'S1', 'log10tmin1', 'log10tmax1', 'S2', 'log10tmin2',
-                'log10tmax2','log_f'] # fix the order
+                'log10tmax2','logf'] # fix the order
 
     elif modelcase.lower() == "wlin":
         # model with linear trend
-        keys = ['a0', 'p1', 'a_precip', 'p2', 't_shiftdays',
+        keys = ['a0', 'p1', 'a_{precip}', 'p2', 't_{shiftdays}',
                 'S1', 'log10tmin1', 'log10tmax1', 'S2', 'log10tmin2',
-                'log10tmax2', 'b_lin', 'log_f'] # fix the order
+                'log10tmax2', 'b_{lin}', 'logf'] # fix the order
 
     else:
         print(f"{modelcase} is not defined. Please check the modelcase.\n")
@@ -142,7 +142,11 @@ def model_base(theta, all=False, **modelparam):
     """
 
     # parse the trial model parameters
-    assert modelparam["ndim"] == len(theta)
+    if modelparam["fixparam01"]:
+        assert modelparam["ndim"] == len(theta)-3
+    else:
+        assert modelparam["ndim"] == len(theta)
+
     a0, p1, a_precip, p2, t_shiftdays, S1, log10tmin1, log10tmax1, S2, log10tmin2, log10tmax2, log_f = theta
 
     # get parameters from dictionary
@@ -182,7 +186,11 @@ def model_wlin(theta, all=False, **modelparam):
     dv/v base model with linear trend term.
     """
 
-    assert modelparam["ndim"] == len(theta)
+    if modelparam["fixparam01"]:
+        assert modelparam["ndim"] == len(theta)-3
+    else:
+        assert modelparam["ndim"] == len(theta)
+
     a0, p1, a_precip, p2, t_shiftdays, S1, log10tmin1, log10tmax1, S2, log10tmin2, log10tmax2, b_lin, log_f = theta
 
     # get parameters from dictionary
@@ -232,7 +240,7 @@ def log_likelihood(theta, **modelparam):
     modelcase = modelparam["modelcase"]
     keys      = modelparam["keys"]
 
-    log_f = theta[keys.index("log_f")]
+    log_f = theta[keys.index("logf")]
 
     # print(modelcase, keys)
     # print(keys)
@@ -270,11 +278,12 @@ def log_prior(theta, **modelparam):
 
         # constraint on the coseismic drop in dv/v
         if key == "S1": # special case for the boundary
-            # apply boundaries associated with the magnitude of S1
-            if val < vmin or vmax * S2 < val:
+            # apply a condition such that vmax(S1) * S2 >= S1
+            # we used vmax(S1) = 0.5; in this case the S1 is less than 50% of S2
+            if (val < vmin) or (vmax * S2 < val):
                 return -np.inf
         else:
-            if val < vmin or vmax < val:
+            if (val < vmin) or (vmax < val):
                 return -np.inf
 
     # constraint on the tmin and tmax
@@ -283,17 +292,57 @@ def log_prior(theta, **modelparam):
     log10tmin2 = theta[keys.index("log10tmin2")]
     log10tmax2 = theta[keys.index("log10tmax2")]
 
-    if (log10tmin1>=log10tmax1) or (log10tmin2>=log10tmax2):
+    if (log10tmin1>log10tmax1) or (log10tmin2>log10tmax2): # a condition such that tmin < tmax
         return -np.inf
 
     # if all the trial parameters are within the boundaries, return 0.
     return 0
 
-def log_probability(theta, **modelparam):
+def log_probability(theta0, **modelparam):
     time.process_time()
     # print(type(modelparam))
+    # 2023.04.07 Update: add 'fixparam01' flag to fix the aprecip, log10tmin1 and log10tmin2
+    # print(modelparam.keys())
+    if modelparam["fixparam01"] == True:
+        # fix the aprecip, log10tmin1 and log10tmin2
+        if  modelparam["modelcase"]=="base":
+            theta = np.concatenate((theta0[0:2], [modelparam["a_{precip}_fixed"]], theta0[2:5], [modelparam["log10tmin1_fixed"]],
+                              theta0[5:7], [modelparam["log10tmin2_fixed"]], theta0[7:9]), axis=None)
+        elif modelparam["modelcase"]=="wlin":
+            theta = np.concatenate((theta0[0:2], [modelparam["a_{precip}_fixed"]], theta0[2:5], [modelparam["log10tmin1_fixed"]],
+                              theta0[5:7], [modelparam["log10tmin2_fixed"]], theta0[7:10]), axis=None)
+
+    else:
+        # do not fix the parameters
+        theta = theta0
+
+    # print("theta0:")
+    # print(theta0)
+
+    # print("theta:")
+    # print(theta)
+
     lp = log_prior(theta, **modelparam)
     # print(lp)
     if not np.isfinite(lp):
         return -np.inf
     return lp + log_likelihood(theta, **modelparam)
+
+
+
+def moving_average(x, w):
+    return np.convolve(x, np.ones(w), 'same') / w
+
+def compute_AIC(y_obs, y_syn, k):
+    assert len(y_obs) == len(y_syn)
+    N = len(y_obs)
+    return N*np.log((1/N)*np.nansum((y_obs - y_syn)**2)) + 2*k
+
+def compute_BIC(y_obs, y_syn, k):
+    assert len(y_obs) == len(y_syn)
+    N = len(y_obs)
+    return N*np.log((1/N)*np.nansum((y_obs - y_syn)**2)) + k*np.log(N)
+
+
+
+

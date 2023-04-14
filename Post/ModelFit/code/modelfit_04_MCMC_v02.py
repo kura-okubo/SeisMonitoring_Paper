@@ -67,7 +67,7 @@ if __name__ == '__main__':
     h5_id = 1
 
     # select the number of iteration during the MCMC inversion
-    nsteps = 10000#30000
+    nsteps = 15000 #10000#30000
 
     # set initial value and boundaries of the model parameters
     # format is: (initial value, [vmin, vmax])
@@ -75,21 +75,21 @@ if __name__ == '__main__':
     modelparam = {
                 "a0"            : (0.0, [-1.0, 1.0]), # offset
                 "p1"            : (0.01, [-np.inf, np.inf]), # scale of GWL
-                "a_precip"      : (1e-2, [0, 1.0]), # delay in GWL [1/day]
+                "a_{precip}"      : (1e-2, [0, 1.0]), # delay in GWL [1/day]
                 "p2"            : (0.01, [-np.inf, np.inf]), # scale of Temp
-                "t_shiftdays"   : (7, [0, 180]), # shift of temp in days
+                "t_{shiftdays}"   : (7, [0, 180]), # shift of temp in days
                 "S1"            : (0.03, [0.0, 0.5]), # scale in coseimic change at SS NOTE: the vmax is assigned as the factor with S1
                 "log10tmin1"    : (0, [-1, 7.98]), # healing tmin duration
                 "log10tmax1"    : (np.log10(1e8), [7.5, 12]), # healing tmax duration # ranging from 1 year to 30000 years
                 "S2"            : (0.08, [0.0, 1.0]), # scale in coseimic change at PF
                 "log10tmin2"    : (0, [-1, 7.98]), # healing tmin duration
                 "log10tmax2"    : (np.log10(2.67e8), [7.5, 12]), # healing tmax duration # ranging from 1 year to 30000 years
-                "b_lin"         : (0.0, [-np.inf, np.inf]), # slope of linear trend
-                "log_f"         : (0.0, [-10, 10]), # magnitude of uncertainity
+                "b_{lin}"         : (0.0, [-np.inf, np.inf]), # slope of linear trend
+                "logf"         : (0.0, [-10, 10]), # magnitude of uncertainity
                 }
 
     # model case
-    modelparam["modelcase"] = "wlin" # "base" or "wlin"
+    modelparam["modelcase"] = "base" # "base" or "wlin"
 
     # MCMC parameters
     modelparam["nwalkers"] = 32 # number of chains
@@ -182,7 +182,11 @@ if __name__ == '__main__':
     #------------------------------------------------------#
 
     # select station ids for debug
-    stationids = [40, 13, 26, 32]
+    # stationids = range(len(stationpairs))
+    stationids = [stationpairs.index("BP.EADB-BP.VCAB")]
+    print(stationids)
+    # stationids = [40, 13, 26, 32]
+    # stationids = range(37,len(stationpairs))
 
     # for stationpair in tqdm(stationpairs):
 
@@ -191,7 +195,7 @@ if __name__ == '__main__':
         print("start processing :"+stationpair)
 
         # search file and skip if it exists.
-        foname = output_datadir+"/MCMC_sampler_%s_%s_%s.pickle"%(stationpair, freqband, modelparam["modelcase"])
+        foname = output_datadir+"/MCMC_sampler_%s_%s_%s_%s.pickle"%(stationpair, freqband, modelparam["modelcase"], dvvmethod)
 
         if os.path.exists(foname):
             print(os.path.basename(foname) + "exists. Skipping.")

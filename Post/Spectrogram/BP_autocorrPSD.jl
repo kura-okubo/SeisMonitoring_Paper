@@ -1,13 +1,17 @@
 # Script to compute spectrogram on BP network using autocorrelation
 #2022/08/16 Kurama Okubo
+#2023/04/14 Update to dump the data
+
 using SeisIO, SeisNoise #SeisMonitoring
 using DSP, Dates, ScanDir, JLD2
 using Plots
 
-InputDict = Dict()
-InputDict["fodir"] = "../data"
+inputdatadir = "../data"
+fodir = "../PPSD_data"
 figdir = "../figure"
 
+!ispath(fodir) && mkpath(fodir)
+!ispath(figdir) && mkpath(figdir)
 # load Autocorrlation
 
 network = "BP"
@@ -18,7 +22,7 @@ freqkey = "0.001-10.0"
 for station in station_list
 	for channel in channel_list
 		netstachan_auto = "$(network).$(station)-$(network).$(station)-$(channel)"
-		finame = "../data/$(netstachan_auto).jld2"
+		finame = "$(inputdatadir)/$(netstachan_auto).jld2"
 		tukey_alpha=0.05
 
 		# read first corrdata to read meta data
@@ -31,7 +35,6 @@ for station in station_list
 		Nlag = size(C1.corr, 1) # length of time lag of autocorrelations
 		fs = C1.fs
 		close(t)
-
 
 		# initialize arrays
 		tvec_all = []
@@ -113,6 +116,16 @@ for station in station_list
 
 		figname = joinpath(figdir, "$(netstachan_auto).png")
 		savefig(p, figname)
+
+		# dump the data
+		jldopen("$(fodir)/PPSDdata_$(netstachan_auto).jld2", "w") do fo
+			fo["netstachan"] = netstachan_auto
+			fo["freqkey"] = freqkey
+			fo["fs"] = fs
+			fo["tvec_all"] = tvec_all
+			fo["Spfreq"] = Spfreq
+			fo["Sp_all"] = Sp_all
+		end
 	end
 end
 # # save figure

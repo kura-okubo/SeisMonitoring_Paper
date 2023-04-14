@@ -122,7 +122,7 @@ for station in station_list
 			fo["netstachan"] = netstachan_auto
 			fo["freqkey"] = freqkey
 			fo["fs"] = fs
-			fo["tvec_all"] = tvec_all
+			fo["tvec_all"] = datetime2unix.(tvec_all)
 			fo["Spfreq"] = Spfreq
 			fo["Sp_all"] = Sp_all
 		end

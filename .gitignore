@@ -39,7 +39,10 @@ Figures
 Appx/appxdata
 Appx/check_rawdata*
 Appx/evaluation_*
-Appx/plot_CCF
+#Appx/plot_CCF
+Appx/plot_CCF/data*
+Appx/plot_CCF/data
+Appx/plot_CCF/figure
 Appx/Scaling_Frontera
 Appx/tremorsignal
 Appx/validation_*

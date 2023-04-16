@@ -29,6 +29,7 @@ frequency_key = "0.9-1.2"
 
 coda_init_factor = 2.0
 max_coda_length = 40.0
+min_ballistic_twin = 5.0
 vel = 1.0 #[km/s]
 
 outdatadir = "../data_npz"
@@ -46,12 +47,23 @@ end
 
 
 # fi_stachanpair = "BP.EADB-BP.LCCB-11"
-for fi_stachanpair in ccfdata_path_all
+Threads.@threads for fi_stachanpair in ccfdata_path_all
     # @show fi_stachanpair = ccfdata_path_all[1]
     println("start processing $(fi_stachanpair)")
+    sta1, sta2, comp = split(split(split(fi_stachanpair, "/")[end], ".jld2")[1], "-")
+    stachanpair = "$(sta1)-$(sta2)-$(comp)"
+    @show fodataname = outdatadir*"/corrdata_$(stachanpair)_$(frequency_key).npz"
+    if isfile(fodataname)
+        println("$(fodataname) exists. continue.")
+        continue
+    end
+
+    # read corrdata
     fi = jldopen("$(fi_stachanpair)", "r")
 
     Craw, CorrData_Buffer = assemble_corrdata(fi,starttime,endtime,frequency_key, MAX_MEM_USE=2.0)
+
+    close(fi)
 
     # Assemble all corr data
     C = CorrData()
@@ -89,7 +101,12 @@ for fi_stachanpair in ccfdata_path_all
         end
     end
 
-    ci = [-coda_init_factor*C.dist/vel, coda_init_factor*C.dist/vel]
+    if sta1==sta2
+        #auto correlation
+        ci = [-min_ballistic_twin, min_ballistic_twin]
+    else
+        ci = [-coda_init_factor*C.dist/vel, coda_init_factor*C.dist/vel]
+    end
     ce = [-max_coda_length , max_coda_length ]
 
     Plots.heatmap(lags,yticks,C.corr',c=:balance,legend=:none, framestyle = :box, margin = 15mm,
@@ -135,5 +152,5 @@ for fi_stachanpair in ccfdata_path_all
     data_corr = Dict("lags" => lags, "t"=>C.t, "corr"=>C.corr, "linstack"=>Cstack.corr, "codainit"=>ci, "codaend"=>ce,
                      "coda_init_factor"=>coda_init_factor, "max_coda_length"=>max_coda_length, "vel"=>vel)
 
-    save(outdatadir*"/corrdata_$(Craw.name)_$(frequency_key).npz", data_corr)
+    save(fodataname, data_corr)
 end

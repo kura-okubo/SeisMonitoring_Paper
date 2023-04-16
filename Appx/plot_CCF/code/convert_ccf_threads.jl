@@ -20,7 +20,7 @@ fodir = "../figure"
 #------------------------------------------#
 CCF_datadir = "../data/"
 starttime = DateTime("2002-01-01T00:00:00")
-endtime = DateTime("2022-06-01T00:00:00")
+endtime = DateTime("2008-06-01T00:00:00")
 refstartyear = DateTime("2002-01-01T00:00:00")
 refendyear = DateTime("2022-06-01T00:00:00")
 
@@ -31,6 +31,7 @@ coda_init_factor = 2.0
 max_coda_length = 40.0
 min_ballistic_twin = 5.0
 vel = 1.0 #[km/s]
+maxlag_trim = 50.0 # trim the corrdata to optimize the data size
 
 outdatadir = "../data_npz"
 #------------------------------------------#
@@ -82,6 +83,9 @@ Threads.@threads for fi_stachanpair in ccfdata_path_all
     end
 
     lags = -C.maxlag:1/C.fs:C.maxlag
+
+    triminds = findall(x->((-maxlag_trim<=x) &(x<=maxlag_trim)), lags)
+    lags_trim = lags[triminds]
     # times = Dates.format.(Dates.unix2datetime.(C.t),"yyyy/m")
     # Cstack = stack(C,allstack=true)
 
@@ -107,7 +111,7 @@ Threads.@threads for fi_stachanpair in ccfdata_path_all
     else
         ci = [-coda_init_factor*C.dist/vel, coda_init_factor*C.dist/vel]
     end
-    ce = [-max_coda_length , max_coda_length ]
+    ce = [-max_coda_length , max_coda_length]
 
     # Plots.heatmap(lags,yticks,C.corr',c=:balance,legend=:none, framestyle = :box, margin = 15mm,
     #     xlims = (-50, 50),
@@ -149,7 +153,7 @@ Threads.@threads for fi_stachanpair in ccfdata_path_all
         # Plots.savefig(fodir*"/ref_julia/ref_$(Craw.name)_$(frequency_key)Hz.png")
     end
 
-    data_corr = Dict("lags" => lags, "t"=>C.t, "corr"=>C.corr, "linstack"=>Cstack.corr, "codainit"=>ci, "codaend"=>ce,
+    data_corr = Dict("lags" => lags_trim, "t"=>C.t, "corr"=>C.corr[triminds, :], "linstack"=>Cstack.corr[triminds], "codainit"=>ci, "codaend"=>ce,
                      "coda_init_factor"=>coda_init_factor, "max_coda_length"=>max_coda_length, "vel"=>vel)
 
     save(fodataname, data_corr)

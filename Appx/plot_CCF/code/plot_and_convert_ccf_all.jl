@@ -1,6 +1,7 @@
 using SeisIO, SeisNoise, JLD2, Plots, Dates, ProgressMeter, Measures, ScanDir, NPZ
 using SeisMonitoring: assemble_corrdata
 using PyPlot
+using Distributed
 pyplot()
 
 rc("font",family ="Arial",size=12)
@@ -47,7 +48,7 @@ end
 
 
 # fi_stachanpair = "BP.EADB-BP.LCCB-11"
-Threads.@threads for fi_stachanpair in ccfdata_path_all
+@distributed for fi_stachanpair in ccfdata_path_all
     # @show fi_stachanpair = ccfdata_path_all[1]
     println("start processing $(fi_stachanpair)")
     sta1, sta2, comp = split(split(split(fi_stachanpair, "/")[end], ".jld2")[1], "-")

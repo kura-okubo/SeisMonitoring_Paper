@@ -20,13 +20,13 @@ import time
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-get_ipython().run_line_magic('matplotlib', 'inline')
-from IPython.display import display, Math
-import seaborn as sns 
+#get_ipython().run_line_magic('matplotlib', 'inline')
+#from IPython.display import display, Math
+import seaborn as sns
 
 import numpy as np
 import pandas as pd
-import h5py
+#import h5py
 import pickle
 
 import matplotlib as mpl
@@ -57,6 +57,8 @@ plt.rcParams["ytick.minor.visible"] = True
 fidir = "../data_npz"
 freqkey = "0.9-1.2"
 output_imgdir = "../figure/ccf_master"
+cc_medianmute_max = 3.0
+cc_medianmute_min = 0.1
 
 starttime = datetime.datetime(2002, 1, 1)
 endtime = datetime.datetime(2022, 6, 1)

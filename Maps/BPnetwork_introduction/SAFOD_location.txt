@@ -1,0 +1,2 @@
+#SAFOD main hole: ref: https://www.ncedc.org/safod/
+-120.5521, 35.9742

@@ -1,6 +1,20 @@
 .DS_Store
 Examples/.DS_Store
 
+
+# Map
+Maps/BPnetwork_introduction/geotiff_from_USGS_3DEP
+Maps/BPnetwork_introduction/*.grd
+Maps/BPnetwork_introduction/*.conf
+Maps/BPnetwork_introduction/*.history
+Maps/BPnetwork_introduction/*.history
+Maps/BPnetwork_introduction/*.kml
+Maps/BPnetwork_introduction/*.ai
+Maps/BPnetwork_introduction/*.png
+Maps/BPnetwork_introduction/gmt_shelly2017ssefamily.txt
+
+
+
 # Ignore raw inpute file, but track only tar zipped job output file
 # job output file
 Examples/ex_*_INPUT/*.txt

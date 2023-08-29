@@ -2,7 +2,20 @@
 
 This directory contains the script to plot the map on Parkfield and BP network.
 
-To superimpose the topography on the map, the `grd` files are needed. Download the 1-arc-second DEM from USGS download website TNM Download (v2.0): https://apps.nationalmap.gov/downloader/#/. Then, convert the Tiff data to the .grd format using `convert_geotiff_to_grd.sh`.
+To superimpose the topography on the map, the `grd` files are needed. Download the 1-arc-second DEM from USGS download website TNM Download (v2.0): https://apps.nationalmap.gov/downloader/#/. The list of topography files are:
+
+| Location |
+| ---- |
+| n36w119 |
+| n36w120 |
+| n36w121 |
+| n36w122 |
+| n37w119 |
+| n37w120 |
+| n37w121 |
+| n37w122 |
+
+Then, convert the Tiff data to the .grd format using `convert_geotiff_to_grd.sh`.
 
 The fault traces, the rupture areas and the LFE events are obtained from the references listed below.
 

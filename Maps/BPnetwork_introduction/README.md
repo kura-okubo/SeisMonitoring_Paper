@@ -15,7 +15,7 @@ To plot the data, run `sh plot_map_introduction_Parkfield.sh`.
 
 [2]	Johanson, I. A. and Bürgmann, R. Coseismic and postseismic slip from the 2003 san simeon earthquake and their effects on backthrust slip and the 2004 parkfield earthquake. J. Geophys. Res., 115(B7)2010, doi:https://doi.org/10.1029/2009JB006599.
 
-[3] [1]	Mai, P. M. and Thingbaijam, K. K. S. SRCMOD: An Online Database of Finite‐Fault Rupture Models. Seismol. Res. Lett., 85(6):1348-1357, 2014, doi:https://doi.org/10.1785/0220140077.
+[3] Mai, P. M. and Thingbaijam, K. K. S. SRCMOD: An Online Database of Finite‐Fault Rupture Models. Seismol. Res. Lett., 85(6):1348-1357, 2014, doi:https://doi.org/10.1785/0220140077.
 
 [4]	McLaren, M. K., Hardebeck, J. L., van der Elst, N., Unruh, J. R., Bawden, G. W., and Blair, J. L. Complex Faulting Associated with the 22 December 2003 Mw 6.5 San Simeon, California, Earthquake, Aftershocks, and Postseismic Surface Deformation. Bull. Seismol. Soc. Am., 98(4):1659-1680, 2008, doi:https://doi.org/10.1785/0120070088.
 

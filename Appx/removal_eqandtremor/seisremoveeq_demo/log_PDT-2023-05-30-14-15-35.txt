@@ -1,0 +1,153 @@
+nprocs() = 5
+
+
+*************************************************************************************
+  _____        _       __  __                _  _                _
+ / ____|      (_)     |  \/  |              (_)| |              (_)
+| (___    ___  _  ___ | \  / |  ___   _ __   _ | |_  ___   _ __  _  _ __    __ _
+ \___ \  / _ \| |/ __|| |\/| | / _ \ | '_ \ | || __|/ _ \ | '__|| || '_ \  / _` |
+ ____) ||  __/| |\__ \| |  | || (_) || | | || || |_| (_) || |   | || | | || (_| |
+|_____/  \___||_||___/|_|  |_| \___/ |_| |_||_| \__|\___/ |_|   |_||_| |_| \__, |
+                                                                            __/ |
+                                                                           |___/
+
+v0.0.2 (Last update: 2020-08-19) © Kurama Okubo
+*************************************************************************************
+
+Job start running at 2023-05-30T14:16:42
+
+
+input file: /Users/kokubo/Dropbox/NIED_RESEARCH/SeisMonitoring_Paper/Appx/tremorsignal/seisremoveeq_demo/ex_download_data_removaldemo_INPUT/mainparam.jl
+
+***************************************
+seisdownload       = true
+seisremoveeq       = true
+seisxcorrelation   = false
+seisstack          = false
+***************************************
+
+Preparing parallel processing.
+Number of procs              : 5
+Number of available CPU Cores per node: 8
+Number of workers is distributed into cpu cores, so Nprocs>=Ncores uses all cores.
+
+Start running SeisDownload
+
+-------START DOWNLOADING--------
+      From worker 2:	start downloading 2016-01-01T00:00:00
+      From worker 4:	start downloading 2016-01-03T00:00:00
+      From worker 3:	start downloading 2016-01-02T00:00:00
+      From worker 5:	start downloading 2016-01-04T00:00:00
+      From worker 2:	start downloading 2016-01-05T00:00:00
+      From worker 4:	start downloading 2016-01-06T00:00:00
+      From worker 3:	start downloading 2016-01-07T00:00:00
+      From worker 5:	start downloading 2016-01-08T00:00:00
+      From worker 4:	start downloading 2016-01-09T00:00:00
+      From worker 2:	start downloading 2016-01-10T00:00:00
+      From worker 3:	start downloading 2016-01-11T00:00:00
+      From worker 5:	start downloading 2016-01-12T00:00:00
+      From worker 4:	start downloading 2016-01-13T00:00:00
+      From worker 2:	start downloading 2016-01-14T00:00:00
+      From worker 5:	start downloading 2016-01-15T00:00:00
+      From worker 4:	start downloading 2016-01-16T00:00:00
+      From worker 2:	start downloading 2016-01-17T00:00:00
+      From worker 5:	start downloading 2016-01-18T00:00:00
+      From worker 4:	start downloading 2016-01-19T00:00:00
+      From worker 3:	start downloading 2016-01-20T00:00:00
+      From worker 2:	start downloading 2016-01-21T00:00:00
+-------START CONVERTING--------
+---Summary of computational time---
+Total download time: 69.2672[s]
+SeisDownload successfully done in 69.98467993736267 seconds.
+
+
+Start running SeisRemoveEQ
+
+***************************************
+IsKurtosisRemoval  = true
+IsSTALTARemoval    = true
+IsWhitening        = false
+***************************************
+
+-------START Removing EQ--------
+      From worker 3:	start process on BP.EADB.40.SP1__2016-01-04T00:00:00__2016-01-05T00:00:00__sp1.seisio
+      From worker 2:	start process on BP.EADB.40.SP1__2016-01-03T00:00:00__2016-01-04T00:00:00__sp1.seisio
+      From worker 4:	start process on BP.EADB.40.SP1__2016-01-02T00:00:00__2016-01-03T00:00:00__sp1.seisio
+      From worker 5:	start process on BP.EADB.40.SP1__2016-01-01T00:00:00__2016-01-02T00:00:00__sp1.seisio
+      From worker 2:	start process on BP.EADB.40.SP1__2016-01-05T00:00:00__2016-01-06T00:00:00__sp1.seisio
+      From worker 3:	start process on BP.EADB.40.SP1__2016-01-06T00:00:00__2016-01-07T00:00:00__sp1.seisio
+      From worker 4:	start process on BP.EADB.40.SP1__2016-01-07T00:00:00__2016-01-08T00:00:00__sp1.seisio
+      From worker 5:	start process on BP.EADB.40.SP1__2016-01-08T00:00:00__2016-01-09T00:00:00__sp1.seisio
+      From worker 2:	start process on BP.EADB.40.SP1__2016-01-09T00:00:00__2016-01-10T00:00:00__sp1.seisio
+      From worker 3:	start process on BP.EADB.40.SP1__2016-01-10T00:00:00__2016-01-11T00:00:00__sp1.seisio
+      From worker 4:	start process on BP.EADB.40.SP1__2016-01-11T00:00:00__2016-01-12T00:00:00__sp1.seisio
+      From worker 3:	start process on BP.EADB.40.SP1__2016-01-12T00:00:00__2016-01-13T00:00:00__sp1.seisio
+      From worker 5:	start process on BP.EADB.40.SP1__2016-01-13T00:00:00__2016-01-14T00:00:00__sp1.seisio
+      From worker 2:	start process on BP.EADB.40.SP1__2016-01-14T00:00:00__2016-01-15T00:00:00__sp1.seisio
+      From worker 4:	start process on BP.EADB.40.SP1__2016-01-15T00:00:00__2016-01-16T00:00:00__sp1.seisio
+      From worker 3:	start process on BP.EADB.40.SP1__2016-01-16T00:00:00__2016-01-17T00:00:00__sp1.seisio
+      From worker 5:	start process on BP.EADB.40.SP1__2016-01-17T00:00:00__2016-01-18T00:00:00__sp1.seisio
+      From worker 2:	start process on BP.EADB.40.SP1__2016-01-18T00:00:00__2016-01-19T00:00:00__sp1.seisio
+      From worker 4:	start process on BP.EADB.40.SP1__2016-01-19T00:00:00__2016-01-20T00:00:00__sp1.seisio
+      From worker 3:	start process on BP.EADB.40.SP1__2016-01-20T00:00:00__2016-01-21T00:00:00__sp1.seisio
+      From worker 4:	start process on BP.EADB.40.SP1__2016-01-21T00:00:00__2016-01-22T00:00:00__sp1.seisio
+      From worker 5:	start process on BP.EADB.40.SP2__2016-01-01T00:00:00__2016-01-02T00:00:00__sp2.seisio
+      From worker 2:	start process on BP.EADB.40.SP2__2016-01-02T00:00:00__2016-01-03T00:00:00__sp2.seisio
+      From worker 3:	start process on BP.EADB.40.SP2__2016-01-03T00:00:00__2016-01-04T00:00:00__sp2.seisio
+      From worker 2:	start process on BP.EADB.40.SP2__2016-01-04T00:00:00__2016-01-05T00:00:00__sp2.seisio
+      From worker 4:	start process on BP.EADB.40.SP2__2016-01-05T00:00:00__2016-01-06T00:00:00__sp2.seisio
+      From worker 5:	start process on BP.EADB.40.SP2__2016-01-06T00:00:00__2016-01-07T00:00:00__sp2.seisio
+      From worker 3:	start process on BP.EADB.40.SP2__2016-01-07T00:00:00__2016-01-08T00:00:00__sp2.seisio
+      From worker 4:	start process on BP.EADB.40.SP2__2016-01-08T00:00:00__2016-01-09T00:00:00__sp2.seisio
+      From worker 2:	start process on BP.EADB.40.SP2__2016-01-09T00:00:00__2016-01-10T00:00:00__sp2.seisio
+      From worker 5:	start process on BP.EADB.40.SP2__2016-01-10T00:00:00__2016-01-11T00:00:00__sp2.seisio
+      From worker 3:	start process on BP.EADB.40.SP2__2016-01-11T00:00:00__2016-01-12T00:00:00__sp2.seisio
+      From worker 4:	start process on BP.EADB.40.SP2__2016-01-12T00:00:00__2016-01-13T00:00:00__sp2.seisio
+      From worker 2:	start process on BP.EADB.40.SP2__2016-01-13T00:00:00__2016-01-14T00:00:00__sp2.seisio
+      From worker 3:	start process on BP.EADB.40.SP2__2016-01-14T00:00:00__2016-01-15T00:00:00__sp2.seisio
+      From worker 5:	start process on BP.EADB.40.SP2__2016-01-15T00:00:00__2016-01-16T00:00:00__sp2.seisio
+      From worker 4:	start process on BP.EADB.40.SP2__2016-01-16T00:00:00__2016-01-17T00:00:00__sp2.seisio
+      From worker 2:	start process on BP.EADB.40.SP2__2016-01-17T00:00:00__2016-01-18T00:00:00__sp2.seisio
+      From worker 5:	start process on BP.EADB.40.SP2__2016-01-18T00:00:00__2016-01-19T00:00:00__sp2.seisio
+      From worker 3:	start process on BP.EADB.40.SP2__2016-01-19T00:00:00__2016-01-20T00:00:00__sp2.seisio
+      From worker 4:	start process on BP.EADB.40.SP2__2016-01-20T00:00:00__2016-01-21T00:00:00__sp2.seisio
+      From worker 2:	start process on BP.EADB.40.SP2__2016-01-21T00:00:00__2016-01-22T00:00:00__sp2.seisio
+      From worker 5:	start process on BP.EADB.40.SP3__2016-01-01T00:00:00__2016-01-02T00:00:00__sp3.seisio
+      From worker 4:	start process on BP.EADB.40.SP3__2016-01-02T00:00:00__2016-01-03T00:00:00__sp3.seisio
+      From worker 5:	start process on BP.EADB.40.SP3__2016-01-03T00:00:00__2016-01-04T00:00:00__sp3.seisio
+      From worker 2:	start process on BP.EADB.40.SP3__2016-01-05T00:00:00__2016-01-06T00:00:00__sp3.seisio
+      From worker 3:	start process on BP.EADB.40.SP3__2016-01-04T00:00:00__2016-01-05T00:00:00__sp3.seisio
+      From worker 4:	start process on BP.EADB.40.SP3__2016-01-06T00:00:00__2016-01-07T00:00:00__sp3.seisio
+      From worker 2:	start process on BP.EADB.40.SP3__2016-01-07T00:00:00__2016-01-08T00:00:00__sp3.seisio
+      From worker 5:	start process on BP.EADB.40.SP3__2016-01-08T00:00:00__2016-01-09T00:00:00__sp3.seisio
+      From worker 3:	start process on BP.EADB.40.SP3__2016-01-09T00:00:00__2016-01-10T00:00:00__sp3.seisio
+      From worker 4:	start process on BP.EADB.40.SP3__2016-01-10T00:00:00__2016-01-11T00:00:00__sp3.seisio
+      From worker 2:	start process on BP.EADB.40.SP3__2016-01-11T00:00:00__2016-01-12T00:00:00__sp3.seisio
+      From worker 5:	start process on BP.EADB.40.SP3__2016-01-12T00:00:00__2016-01-13T00:00:00__sp3.seisio
+      From worker 4:	start process on BP.EADB.40.SP3__2016-01-13T00:00:00__2016-01-14T00:00:00__sp3.seisio
+      From worker 3:	start process on BP.EADB.40.SP3__2016-01-14T00:00:00__2016-01-15T00:00:00__sp3.seisio
+      From worker 2:	start process on BP.EADB.40.SP3__2016-01-15T00:00:00__2016-01-16T00:00:00__sp3.seisio
+      From worker 3:	start process on BP.EADB.40.SP3__2016-01-16T00:00:00__2016-01-17T00:00:00__sp3.seisio
+      From worker 5:	start process on BP.EADB.40.SP3__2016-01-17T00:00:00__2016-01-18T00:00:00__sp3.seisio
+      From worker 4:	start process on BP.EADB.40.SP3__2016-01-18T00:00:00__2016-01-19T00:00:00__sp3.seisio
+      From worker 2:	start process on BP.EADB.40.SP3__2016-01-19T00:00:00__2016-01-20T00:00:00__sp3.seisio
+      From worker 3:	start process on BP.EADB.40.SP3__2016-01-20T00:00:00__2016-01-21T00:00:00__sp3.seisio
+      From worker 5:	start process on BP.EADB.40.SP3__2016-01-21T00:00:00__2016-01-22T00:00:00__sp3.seisio
+-------START Converting--------
+---Summary---
+time for mean kurtosis cputime  =0.08736434923809525[s]
+time for mean stalta cputime    =0.9615836646507936[s]
+time for remove EQ total    =33.19499425[s]
+time for convert total      =0.0[s]
+SeisRemoveEQ successfully done in 33.82578182220459 seconds.
+
+*********************************************
+All requested processes have been successfully done.
+Computational_time[sec]:
+SeisDownload, 69.98467993736267
+SeisRemoveEQ, 33.82578182220459
+SeisXcorrelation, 0.0
+SeisStack, 0.0
+Total Computational time is 103.8108 seconds.
+*********************************************
+

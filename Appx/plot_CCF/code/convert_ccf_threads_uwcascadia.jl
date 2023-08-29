@@ -11,16 +11,16 @@ rc("ytick", direction = "in")
 rc("ytick.major", size = 5, width=0.5)
 rc("ytick.minor", size = 2, width=1, visible=true)
 
-fodir = "../figure"
+fodir = "./figure"
 !ispath(fodir) && mkpath(fodir)
 !ispath(fodir*"/ccf_julia") && mkpath(fodir*"/ccf_julia")
 !ispath(fodir*"/ref_julia") && mkpath(fodir*"/ref_julia")
 
 
 #------------------------------------------#
-CCF_datadir = "../data/"
+CCF_datadir = "./cc_channel_collection/"
 starttime = DateTime("2002-01-01T00:00:00")
-endtime = DateTime("2008-06-01T00:00:00")
+endtime = DateTime("2022-06-01T00:00:00")
 refstartyear = DateTime("2002-01-01T00:00:00")
 refendyear = DateTime("2022-06-01T00:00:00")
 
@@ -33,7 +33,7 @@ min_ballistic_twin = 5.0
 vel = 1.0 #[km/s]
 maxlag_trim = 50.0 # trim the corrdata to optimize the data size
 
-outdatadir = "../data_npz"
+outdatadir = "./data_npz"
 #------------------------------------------#
 !ispath(outdatadir) && mkpath(outdatadir)
 
@@ -48,7 +48,8 @@ end
 
 
 # fi_stachanpair = "BP.EADB-BP.LCCB-11"
-Threads.@threads for fi_stachanpair in ccfdata_path_all
+#Threads.@threads for fi_stachanpair in ccfdata_path_all
+for fi_stachanpair in ccfdata_path_all
     # @show fi_stachanpair = ccfdata_path_all[1]
     println("start processing $(fi_stachanpair)")
     sta1, sta2, comp = split(split(split(fi_stachanpair, "/")[end], ".jld2")[1], "-")
@@ -70,8 +71,9 @@ Threads.@threads for fi_stachanpair in ccfdata_path_all
     C = CorrData()
     C.corr = zeros(Float32, 4001, 0)
 
-    @showprogress 1 "computing: " for key in sort(collect(keys(CorrData_Buffer)))
-        if isempty(C.id)
+    #@showprogress 1 "computing: " for key in sort(collect(keys(CorrData_Buffer)))
+    for key in sort(collect(keys(CorrData_Buffer)))    
+	if isempty(C.id)
             # initialize corrdata
             C = CorrData_Buffer[key]
             C.t = zeros(Float64, 0)

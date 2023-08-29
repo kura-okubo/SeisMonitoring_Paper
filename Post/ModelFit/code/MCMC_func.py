@@ -335,14 +335,12 @@ def moving_average(x, w):
 
 def compute_AIC(y_obs, y_syn, k):
     assert len(y_obs) == len(y_syn)
-    N = len(y_obs)
+    # N = len(y_obs)
+    N = len(y_obs) - np.count_nonzero(np.isnan(y_obs))
     return N*np.log((1/N)*np.nansum((y_obs - y_syn)**2)) + 2*k
 
 def compute_BIC(y_obs, y_syn, k):
     assert len(y_obs) == len(y_syn)
-    N = len(y_obs)
+    # N = len(y_obs)
+    N = len(y_obs) - np.count_nonzero(np.isnan(y_obs))
     return N*np.log((1/N)*np.nansum((y_obs - y_syn)**2)) + k*np.log(N)
-
-
-
-

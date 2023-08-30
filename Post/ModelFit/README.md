@@ -15,12 +15,16 @@ The dv/v estimation from the stacked correlation functions is gathered in the cs
 ## 3.  Process the time history of precipitation and temperature
 The raw data of the temperature can be donwloaded from https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:USR0000CPAR/detail. We also downloaded monthly precipitation data from the Wildland Fire Remote Automated Weather Stations (RAWS) between 2001-2022 at Parkfield. https://raws.dri.edu/cgi-bin/rawMAIN.pl?caCPAR. We applied the low-pass filter and downsampled the temperature time series to synchronize with the dv/v time history. We also resampled the monthly precipitation time series with linear interpolation. Note that we need to rescale the total precipitation when resampling the precipitation, whereas we didn't apply it as we only focus on the trend of precipitation, not the absolute values. We thus conducted only the linear interpolation to the time series of precipitation for sake of the synchronization. See the detain in the notebook.
 
-The output ot `data/interped_tempandprecip.csv` and `interped_tempandprecip_longterm.csv` are used for the model fitting.
+The output of `data/interped_tempandprecip.csv` and `interped_tempandprecip_longterm.csv` are used for the model fitting.
 
-## 4. Model fitting with original dv/v to precipitation and temperature.
+## 4. Model fitting using MCMC.
+We perform the MCMC parameter search by minimizing the residual of the observed and the modeled dv/v time histories. Run `python modelfit_04_MCMC_v05_fixmodelparam_niedws_t0-90days.py` to conduct the MCMC iteration in parallel. We used [emcee](https://emcee.readthedocs.io/en/stable/) to conduct the MCMC parameter sampling. We also used [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) to parallelize the iteration. You don't need to run with `mpirun`. You can assign the number of cores in the script by e.g. `os.environ["OMP_NUM_THREADS"] = "4"`.
 
+To speed up the integration of logarithmically healing model, we implement the [Low-level callback function](https://docs.scipy.org/doc/scipy/tutorial/integrate.html#faster-integration-using-low-level-callback-functions) in scipy. Before running the MCMC, you need to compile the shared library by `gcc -shared -o healing_int.so healing_int.c` in `code/LowLevel_callback_healing_distributed`.
 
-## 5.
+The output of sampler containing the result of MCMC parameter sampling is stored in `processed_data/MCMC_sampler_{nstep}/`. You can download the result of the model fitting for all the station pairs from the dasway: [MCMC_sampler_20000_v2_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_master.tar.gz) (3.5GB).
+
+## 5. 
 
 
 ## 6.

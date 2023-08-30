@@ -15,7 +15,7 @@ import datetime
 import os
 import time
 
-os.environ["OMP_NUM_THREADS"] = "48"
+os.environ["OMP_NUM_THREADS"] = "4"
 
 import matplotlib.pyplot as plt
 
@@ -174,20 +174,20 @@ if __name__ == '__main__':
             modelparam["precip"] = df_tandp_synchronized.precip
             modelparam["CAVG"]   = df_tandp_synchronized.CAVG
 
-            # # 2nd way
-            # st_center = (averagestack_factor*cc_time_unit/86400)/2
-            # date_range_st = starttime + datetime.timedelta(days=st_center) # day
-            # uniformdates = pd.date_range(start=date_range_st, end=endtime, freq=datefreq)
-            # uniform_tvec = uniformdates.date
-            # print(uniform_tvec)
-            # uniform_tvec3 = [x.date() for x in uniform_tvec1]
+            # 2nd way to check the consistency of time vector
+#             st_center = (averagestack_factor*cc_time_unit/86400)/2
+#             date_range_st = starttime + datetime.timedelta(days=st_center) # day
+#             uniformdates = pd.date_range(start=date_range_st, end=endtime, freq=datefreq)
+#             uniform_tvec2 = uniformdates.date
+#             print(uniform_tvec2)
+#             uniform_tvec3 = [x.date() for x in uniform_tvec]
 
-            # print(uniform_tvec1)
-            # print(uniform_tvec2)
-            # print(uniform_tvec3)
+#             print(uniform_tvec)
+#             print(uniform_tvec2)
+#             print(uniform_tvec3)
 
-            # for i in range(len(uniform_tvec2)):
-            #     assert uniform_tvec3[i] == uniform_tvec2[i]
+#             for i in range(len(uniform_tvec2)):
+#                 assert uniform_tvec3[i] == uniform_tvec2[i]
 
             #---Generate the initial model parameters with chains---#
 

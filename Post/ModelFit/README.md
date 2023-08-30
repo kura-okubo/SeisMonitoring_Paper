@@ -1,4 +1,4 @@
-# Modeling dv/v
+# Work flow of modeling dv/v
 
 Here we describe the work flow of the post processing of dv/v measurements.
 
@@ -24,37 +24,14 @@ To speed up the integration of logarithmically healing model, we implement the [
 
 The output of sampler containing the result of MCMC parameter sampling is stored in `processed_data/MCMC_sampler_{nstep}/`. You can download the result of the model fitting for all the station pairs from the dasway: [MCMC_sampler_20000_v2_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_master.tar.gz) (3.5GB).
 
-## 5. 
+## 5. Collect the result of MCMC sampler and the dv/v
+After running the MCMC, we collect the result of parameter sampling with the dv/v time history by running `modelfit_05_MCMC_modelfit.ipynb`. The input samplar file in pickle format needs to be located in e.g. `processed_data/MCMC_sampler_20000_v2_master`. This outputs the figures associated with the sampling process and the comparison between the model and data of dv/v, and the intermediate file in `modelparam_data`, used for the statistics of model parameter and the plotting. You need to run all the cases such as stretching and MWCS with `base` and `wlin` model to conduct the following steps.
 
+## 6. Compile the maximum likelihood model parameters
+`modelfit_06_MCMC_computemodelstats.ipynb` gather the maximum likelihood model parameters used for the statistical analysis. Select the `dvvmethod` and `modelcase` for all the cases associated with stretching/MWCS and base/wlin.
 
-## 6.
-
-
-## 7.
-
-
-
-
-### 3.1 Fit precip and temperature and obtain coefficient
-We perform model fitting with julia to estimate best fitting parameter on precip and temperature model. Save parameters into csv.
-
-$$ y_model = $$
-
-
-### 3.2 Reconstruct models and subtract from original dv/v
-In python notebook, reconstruct the models associated with GWL and temperature using coefficients, and subtract from dv/v. It is used in next step to estimate coseismic drop of dv/v.
-
-### 3.3 Fit logarithmically healing model of coseimsic velocity drop
-We again estimate coseimsic drop using Julia and dv/v where GWL and temperature are subtracted. Save coefficients to csv.
-
-## 4. Process with subtraction
-The models are subtracted from dv/v, and focus on the residuals. Save each station-channel pairs into csv.
-
-## 5. Post process result.
-Plot all with mean and std.
-
-## 1.7 applying MCMC modelfit
-To show multimodality of parameter fitting, we apply MCMC algorithm to search parameters.
+## 7. Plot the statistical analysis of model parameters
+`modelfit_07_MCMC_plotstats.ipynb` plot the statistical analysis of the maximum likelihood model parameters. Before running this notebook, you need to run `Maps/BPnetwork_Faultdist/compute_faultnormaldistance/code/BPnetwork_computeFaultdist.ipynb` to compute the fault-normal distance of the seismic stations. The random seed is preset to fix the jitter plots.
 
 
 ---
@@ -72,3 +49,9 @@ We reshape the dv/v data sheet using `pivot` function and save to the new csv, w
 - Comparison before and after the channel weighting
 
 Some of the figures are used in the main text.
+
+## iii. Plot the scatter matrix and model fitting of dv/v.
+`Post/ModelFit/code/plotfigure_MCMCscattermatrix_stretching/mwcs.ipynb` generates the scatter matrix of MCMC parameter sampling and dump the data of modeled dv/v. You need to run up to step 2 to obtain the `02dvvanderr_formodelfit_chanweighted_dvvtraces_chanweighted_monitoring_stats_uwbackup_2010-2022_stretching/mwcs.csv_0.9-1.2.h5` and download the MCMC sampler of `MCMC_sampler_20000_v2_master.tar.gz`. Then, `plotfigure_MCMCdvvmodelfit.ipynb` plots the comparison of base and wlin models.
+
+## iv. Plot the comparison of the best model and data of dv/v
+`plotfigure_alldvvmodelfit.ipynb` generates the comparison between the maximum likelihood models and the observed dv/v for all the station pairs. We also plot the dv/v sorted by the fault-normal distance to investigate the change in `tmax` as a function of the distance.

@@ -1,0 +1,16 @@
+name: seismonitoring_paper
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - seaborn
+  - h5py
+  - pandas
+  - matplotlib
+  - tqdm
+  - emcee
+  - corner
+  - cartopy=0.21.1
+  - geopy

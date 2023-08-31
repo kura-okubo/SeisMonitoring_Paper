@@ -27,6 +27,9 @@ The output of sampler containing the result of MCMC parameter sampling is stored
 ## 5. Collect the result of MCMC sampler and the dv/v
 After running the MCMC, we collect the result of parameter sampling with the dv/v time history by running `modelfit_05_MCMC_modelfit.ipynb`. The input samplar file in pickle format needs to be located in e.g. `processed_data/MCMC_sampler_20000_v2_master`. This outputs the figures associated with the sampling process and the comparison between the model and data of dv/v, and the intermediate file in `modelparam_data`, used for the statistics of model parameter and the plotting. You need to run all the cases such as stretching and MWCS with `base` and `wlin` model to conduct the following steps.
 
+You can download the output of this step from [modelparam_data_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_master.tar.gz).
+
+
 ## 6. Compile the maximum likelihood model parameters
 `modelfit_06_MCMC_computemodelstats.ipynb` gather the maximum likelihood model parameters used for the statistical analysis. Select the `dvvmethod` and `modelcase` for all the cases associated with stretching/MWCS and base/wlin.
 

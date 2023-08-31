@@ -1,6 +1,6 @@
 .DS_Store
-Examples/.DS_Store
-
+.ipynb_checkpoints
+__pycache__
 
 # Map
 Maps/BPnetwork_introduction/geotiff_from_USGS_3DEP
@@ -13,7 +13,94 @@ Maps/BPnetwork_introduction/*.ai
 Maps/BPnetwork_introduction/*.png
 Maps/BPnetwork_introduction/gmt_shelly2017ssefamily.txt
 
+Maps/BPnetwork_Faultdist/compute_faultnormaldistance/note
+Maps/BPnetwork_Faultdist/compute_faultnormaldistance/figure
 
+# PPSD
+Post/Spectrogram/SeisMonitoring_PPSDdata*
+Post/Spectrogram/figure_3cols
+
+# EQ removal
+Appx/removal_eqandtremor/seisremoveeq_demo/ex_*
+Appx/removal_eqandtremor/plot_removalschematic/sac_*
+Appx/removal_eqandtremor/plot_removalschematic/figure
+
+# Data availability
+Post/DataAvailability/csv_dataavailability_tacc
+Post/DataAvailability/archive
+Post/DataAvailability/test*
+Post/DataAvailability/figure*
+
+# Plot CCF
+Appx/plot_CCF/data_npz/*
+Appx/plot_CCF/figure
+Appx/plot_CCF/plot_CCF_cascadia*
+Appx/plot_CCF/ccf_master_v4medianmute*
+
+# Sensitivity kernel
+Appx/BP_sensitivity_kernel/PROGRAMS.330
+Appx/BP_sensitivity_kernel/data
+Appx/BP_sensitivity_kernel/figure
+
+# Model fitting
+Post/ModelFit/code/debug*
+Post/ModelFit/data/monitoring_stats*
+Post/ModelFit/data/Parkfield_California_Precipitation_2001-2022_RAWS.csv
+Post/ModelFit/data/parkfield_temperature_noaa_2022.csv
+Post/ModelFit/data/dvvtraces*
+Post/ModelFit/figure
+Post/ModelFit/figure_stats
+Post/ModelFit/plotcsv_masterdata
+Post/ModelFit/processed_data
+Post/ModelFit/modelparam_data*
+Post/ModelFit/plotdvvmodel_data
+Post/ModelFit/data_stats/MCMC_modelparam_all_stretching*
+Post/ModelFit/data_stats/MCMC_modelparam_all_mwcs*
+Post/ModelFit/data_stats/*.pickle
+
+# Model schematic
+Appx/modelschematic/*_wannot*
+Appx/modelschematic/*.eps
+
+# Cumulative strain
+Post/CumulativeStrain/code/*.ai
+Post/CumulativeStrain/figure
+
+Post/CumulativeStrain/data/*
+!Post/CumulativeStrain/data/BP_strain_timeseries_rotatedaxialstrain.csv
+!Post/CumulativeStrain/data/comparison_dvv_strain_all.csv
+!Post/CumulativeStrain/data/sensitivity_linearregression_useallstation.csv
+
+Post/CumulativeStrain/code/plotmap/gmt.conf
+
+Post/CumulativeStrain/compute_triangularstrain/output
+Post/CumulativeStrain/compute_triangularstrain/*.py
+Post/CumulativeStrain/compute_triangularstrain/log*
+Post/CumulativeStrain/compute_triangularstrain/BP_GPSstations.txt
+Post/CumulativeStrain/PyTAGS
+
+# Trade off of log healing model parameter
+Appx/tradeoff_logheal_SandTmax/data
+Appx/tradeoff_logheal_SandTmax/figure
+
+# Residual healing model
+Appx/casestudy_residual_healing/figure
+Appx/casestudy_residual_healing/plotdvvmodel_data_resheal
+Appx/casestudy_residual_healing/processed_data_resheal
+
+# Scaling of parallelization
+Appx/Scaling_Frontera/Scaling
+
+# Gaussian weighting schematic
+Appx/weighting_integral_Gauss/df_deltastrain_all.csv
+Appx/weighting_integral_Gauss/figure
+
+# comparison to the tremor rate
+Appx/comparison_ParkfieldTremorrate/figure
+Appx/comparison_ParkfieldTremorrate/reference
+Appx/comparison_ParkfieldTremorrate/data/*.png
+
+---
 
 # Ignore raw inpute file, but track only tar zipped job output file
 # job output file
@@ -25,49 +112,25 @@ Examples/ex_*_INPUT/nodes.*
 Examples/ex_*_INPUT/run_slurm
 # temporal output directory
 Examples/ex_*_OUTPUT
-# Output for scaling of parallelization is tar zipped.
-Utils/Scaling
 
-# OUTPUT csv files will be archived in another cloud strage
-OUTPUT*/*
-OUTPUT_master.tar
-
-# Post process
-Post/ModelFit/data*
-Post/ModelFit/figure*
-Post/ModelFit/*_data
-Post/ModelFit/_*
-Post/ModelFit/code
-
-
-.ipynb_checkpoints
-__pycache__
-
-Tutorial
-Examples/archive*
-
-Backup
-
-# Temporarily ignore the subproject directories
-Figures
-Appx/appxdata
-Appx/check_rawdata*
-Appx/evaluation_*
-#Appx/plot_CCF
-Appx/plot_CCF/data*
-Appx/plot_CCF/data
-Appx/plot_CCF/figure
-Appx/Scaling_Frontera
-Appx/tremorsignal
-Appx/validation_*
-
-
-
-Figures
-Post/CumulativeStrain
-Post/DataAvailability/csv*
-Post/DataAvailability/figure*
-Pytags_PF_v00
-Post/Spectrogram/PSD*
-Post/Spectrogram/data
-Post/Spectrogram/*.tar.gz
+---
+# Others
+Others/strain_rotation/figure
+Others/strain_rotation/*.jpg
+Others/strain_rotation/*.ai
+Others/strain_rotation/check_rotationangle_BP.ipynb
+Others/strain_rotation/check_strain_rotation_axialstrain.ipynb
+Others/GLM_intercept_test
+Others/df_replacement_filled.csv
+Others/df_replacement_filled.csv
+Others/check_dataquality
+Others/dvvanalysis_onTACC
+Others/Parkfield_precipitation_RAWS
+Others/notes
+Others/check_stationhealth
+Others/check_rawdatatimestamp
+Others/check_NoisePowerChange_CFs
+Others/modelcheck_precipitation
+Others/get_MCMC_fixedparam/figure
+Others/get_MCMC_fixedparam/figure_stats/MCMC_alldvvfit_*
+Others/get_MCMC_fixedparam/modelparam_data*

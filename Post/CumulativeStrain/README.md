@@ -58,3 +58,7 @@ to compute the strain field.
 - Compute the comparison between the dv/v processed above and the cumulative strain in `05_compare_dvv_and_strain.ipynb`. It dumps the csv datasheet associated with the time evolution of dv/v and strain, and the sensitivity obtained by the linear regression.
 
 - Run `06_plotcomparison_dvvandstrain.ipynb` to plot the master figures for the sensitivity of dv/v to the strain. It also plots the rotated axial strain and its sensitivity.
+
+---
+## Plot cumulative strain on the map
+Run `code/plotmap/plot_gps_cumulativestrain_v4.sh` to plot the maps with the cumulative strain field. It generates the snapshots of the cumulative strain.

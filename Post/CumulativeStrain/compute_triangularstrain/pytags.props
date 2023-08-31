@@ -1,0 +1,34 @@
+####################################################
+#Overall properties
+#strainmode, 0 for triangulated, 1 for gridded
+#temporal mode, 0 for time series, 1 for static velocity file
+####################################################
+strainmode=0
+temporalmode=0
+sitefile=BP_GPSstations.txt
+datadir=../data/WNAM_Clean_TrendNeuTimeSeries_sopac_20230416/
+#datasource, either sopac or pbo currently
+datasource=sopac
+#data suffix refers to all material after site code, including punctuation
+datasuffix=CleanTrend.neu
+#datasuffix=.pbo.final_igs08.pos
+
+#starting and ending years of analysis, end year is inclusive of year
+startyear=2009
+endyear=2023
+
+####################################################
+#Gridding properties
+#sets the min/max dimensions and number of grid points, nlon and nlat
+####################################################
+
+maxlon=-119.5
+minlon=-122.5
+maxlat=36.0
+minlat=34.0
+nlon=10
+nlat=10
+griddistweight=10
+##triangulation properties
+#maximum dimension of a triangle side, in km
+maxtrilength=100

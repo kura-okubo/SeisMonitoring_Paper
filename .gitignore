@@ -126,7 +126,12 @@ Others/GLM_intercept_test
 Others/df_replacement_filled.csv
 Others/df_replacement_filled.csv
 Others/check_dataquality
-Others/dvvanalysis_onTACC
+
+Others/dvvanalysis_onTACC/stretching_practitioner_correction
+# Others/dvvanalysis_onTACC/figure
+Others/dvvanalysis_onTACC/data
+Others/dvvanalysis_onTACC/plotcsv_TACC_masterdata
+
 Others/Parkfield_precipitation_RAWS
 Others/notes
 Others/check_stationhealth

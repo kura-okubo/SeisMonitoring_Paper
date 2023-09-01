@@ -2,6 +2,8 @@
 .ipynb_checkpoints
 __pycache__
 
+docs/build/
+
 # Map
 Maps/BPnetwork_introduction/geotiff_from_USGS_3DEP
 Maps/BPnetwork_introduction/*.grd

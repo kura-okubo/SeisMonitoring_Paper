@@ -11,7 +11,7 @@ You can download the dv/v datasheet from [`monitoring_stats_uwbackup_2010-2022.t
 
 In the early development of software tools using [TACC FRONTERA](https://frontera-portal.tacc.utexas.edu), we performed the following case studies for the data between 2002-2020 to investigate the effect of parameters associated with the process flow on the dv/v time history, which are archived as follows.
 
-| id |remove eq|temporal/spectral normalization |dv/v method| reference period |
+| id |remove eq|temporal/spectral normalization | dv/v method | reference period |
 |---|---|---|---|---|
 |02| yes | no | stretching | 2010-2020 |
 |03| yes | no | mwcs | 2010-2020 |
@@ -28,32 +28,46 @@ In the early development of software tools using [TACC FRONTERA](https://fronter
     We investigated the case studies listed above to check the effect of reference period, normalizations and stacking methods to the dv/v time history. Indeed, it only causes minor differences in dv/v and does not modify the conclusions. However, as we have updated the software tools even after the the jobs done in FRONTERA and extended the study period from 2020 to 2022, we keep those case studies as the archives here.   
 
 The archived dv/v datasheets are available in [`monitoring_stats_TACCbackup.tar.gz`]()
-
+The plots of the comparison between the master data sheets and the case study on Frontera can be found in [`Others/dvvanalysis_onTACC`](Others/dvvanalysis_onTACC),
 
 
 ## How to run the projects
-To conduct the casestudy listed as above, please initiate projects and run processes as following:
-
-1. Move to `Examples` and run `sh init_project_all.sh`.
-
-!!! note
-    Julia scripts initiating projects at each stage (download, remove eq, cross-correlation, stacking & measurement) are stored in `Examples` directory. We them copy `mainparam_master.jl` to the input directory, which contains all parameters associated with processing. You can manipulate them by modifying `mainparam_master.jl` or the julia scripts with `SeisMonitoring.set_parameter()`.
-
-!!! note
-    You can run from download data to stacking & dv/v measurement in one project at once; However, in this repository we separately process them for the sake of simplicity.
+To execute the process flow, we first configure the init file, e.g. `Example/init_ex_download.jl`, to set the input and output paths as well as the process parameters.
 
 !!! note
     The output directory is specified in the julia scripts as `project_outputdir`. We need disk space enough to store the raw and intermediate data (CCFs, stacked CorrData).
 
+Then, we run the job using the `topo_multi_slurm_run.jl` and `topo_slurm_multi.slurm`. These work flow is summarized in the [tutorial of SeisMonitoring.jl](https://nbviewer.org/github/kura-okubo/SeisMonitoring_Example/blob/main/code/run_seismonitoring.ipynb).
+
+!!! note
+    We performed the casestudy with Slurm Workload Manager in Frontera, while we run the job in workstation such that
+    ```
+    #!/bin/bash
+
+    timestamp=$(date +PDT-%Y-%m-%d-%H-%M-%S)
+    NPROCS=16
+
+    date > log_$timestamp.txt
+    julia topo_multi_slurm_run_uwdata.jl  $NPROCS 2>&1 | tee -a log_$timestamp.txt
+    date >> log_$timestamp.txt
+    ```
+Once you finished the processing of the stacking and the measurement of dv/v, run `SeisMonitoring.smstats_read_stretching/mwcs` as coded in `Utils/run_smstats.jl`. This gathers the output of dv/v measurement and dumps to the csv file.
+
+## Run the archived casestudy
+To conduct the archived casestudy listed in the table above, please initiate projects and run processes as following:
+
+1. Move to `Examples` and run `sh init_project_all.sh`.
+
+!!! note
+    You can run from download data to stacking & dv/v measurement in one project at once; However, in this repository we separately process them for the sake of simplicity.
+
+
 2. Go to `Examples` and run/submit jobs from download to stacking (see slurm batches to run jobs).
 
 !!! note
-    We performed this casestudy with Slurm Workload Manager in [Frontera](https://frontera-portal.tacc.utexas.edu).
+    The batch files need to be manually prepared in each input directory. For the cross-correlation stage, use `Utils/make_slurmbatch_parallel.jl` to prepare the slurm batch files to parallelize cc process with time chunks. In Frontera, it takes **~1.6 hours to complete all the cross-correlations (13 stations x 3 components x 18 years)** using 21 nodes and 37 cores/node. Note that this computational time does not include the waiting time of the job's queue.
 
-!!! note
-    The batch files are manually prepared in each input directory. For the cross-correlation stage, use `Utils/make_slurmbatch_parallel.jl` to prepare the slurm batch files to parallelize cc process with time chunks.
-
-3. Run `sh Utils/smstats_seismonitoring.sh` to compile the outputs into csv table.
+3. Configure the paths and run `sh Utils/smstats_seismonitoring.sh` to compile the outputs into csv table.
 
 !!! note
     The stacked CorrData has the measurements in its misc (`C.misc`). `run_smstats.jl` gathers the measurements from stacked corrdata and output in csv table for post processing.

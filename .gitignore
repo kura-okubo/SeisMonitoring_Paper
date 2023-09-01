@@ -2,7 +2,7 @@
 .ipynb_checkpoints
 __pycache__
 
-docs/build/
+docs/build
 
 # Map
 Maps/BPnetwork_introduction/geotiff_from_USGS_3DEP

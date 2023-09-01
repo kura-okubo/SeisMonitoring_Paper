@@ -1,64 +1,62 @@
 # SeisMonitoring Paper
+Input files and jupyter notebooks to reproduce the processings and figures associated with the  ambient seismic noise in Parkfield.
 
-This repository contains
-1. the examples for the use of SeisMonitoring.jl to perform the processing of ambient seismic noise.
-2. scripts to post-process the data and to plot the figures.
+## Contents
 
-## Case study
+### Example
+Input files and the output log of the ambient seismic noise processing using [**SeisMonitoring.jl**](https://github.com/kura-okubo/SeisMonitoring.jl).
 
-We performed the following case study to investigate the effect of each process flow on the dv/v time history using [TACC FRONTERA](https://frontera-portal.tacc.utexas.edu).
+[**See the docs**]() to run the processing from downloading the data, cross-correlation, stacking, and measurement of dv/v.
 
-| id |remove eq|normalization |method| reference period |
-|---|---|---|---|---|
-|01| yes | no | stretching | 2010-2020 |
-|02| yes | no | mwcs | 2010-2020 |
-|03| yes | spectral whitening + onebit  | stretching | 2010-2020 |
-|04| yes | spectral whitening + onebit | mwcs |2010-2020|
-|05| yes | no | stretching | 2006-2016 |
-|06| yes | no | stretching | 2007-2010 |
-|07| yes | no | stretching | 2017-2020 |
-|08| no  | no | stretching | 2010-2020 |
-|09| yes | no | robust stuck + stretching | 2010-2020 |
-|10| yes | no | compute coda Q | 2010-2020 |
 
-We also conducted the case study in our local workstation at UW.
+We also have the tutorial of the software in different Github repository: See [**SeisMonitoring_Example**](https://github.com/kura-okubo/SeisMonitoring_Example).
 
-| id |remove eq|normalization |method| reference period |
-|---|---|---|---|---|
-|11| yes | no | stretching | 2010-2022 |
+<a href="https://nbviewer.org/github/kura-okubo/SeisMonitoring_Example/blob/main/code/run_seismonitoring.ipynb" target="_blank">
+   <img align="left"
+      src="https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.png"
+      width="109" height="20">
+</a>
 
-### How to initiate projects
-To conduct the casestudy listed as above, please initiate projects and run processes as following:
+<br>
 
-1. Move to `Examples` and run `sh init_project_all.sh`.
+### Post
+Post-processing of the cross-correlation and dv/v time history.
+#### - Cumulative strain
+Compute the strain field and evaluate the sensitivity of dv/v to the cumulative strain.
+#### - Data availability
+Plot the availability of seismic data.
 
->Julia scripts initiating projects at each stage (download, remove eq, cross-correlation, stacking & measurement) are stored in `Examples` directory. We them copy `mainparam_master.jl` to the input directory, which contains all parameters associated with processing. You can manipulate them by modifying `mainparam_master.jl` or the julia scripts with `SeisMonitoring.set_parameter()`.
+#### - Model fitting
+Fitting the model to the observed dv/v time history.
 
-> You can run from download data to stacking & dv/v measurement in one project at once; However, in this repository we separately process them for the sake of simplicity.
+#### - Spectrogram
+Plot the spectrogram of the continuous seismic waveform.
 
-> The output directory is specified in the julia scripts as `project_outputdir`. We need disk space enough to store the raw and intermediate data (CCFs, stacked CorrData).
+### Maps
+Plot the map and compute the fault normal distance of the seismic stations.
 
-2. Go to `Examples` and run/submit jobs from download to stacking (see slurm batches to run jobs).
+### Others
+Notebooks to test the codes.
 
-> We performed this casestudy with Slurm Workload Manager in [Frontera](https://frontera-portal.tacc.utexas.edu).
+### Utils
+Some scripts used for manipulating the input and output of processings.
 
-> The batch files are manually prepared in each input directory. For the cross-correlation stage, use `Utils/make_slurmbatch_parallel.jl` to prepare the slurm batch files to parallelize cc process with time chunks.
+## Download dataset
+The intermediate files of the post-processing are available in the UW dasway.
 
-3. Run `sh Utils/smstats_seismonitoring.sh` to compile the outputs into csv table.
+| Filename | Size | Description  | Location in repo |
+|---|---|---|---|
+| [SeisMonitoring_PPSDdata.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/SeisMonitoring_PPSDdata.tar.gz) | 1.4GB |  Probabilistic power spectral densities of the raw seismic data.  | `Post/Spectrogram/`|
+| [BP.xxxx-BP.xxxx-cc.jld2]() (← Link to download docs) | ~500MB/pair | Cross-correlation functions over 20 years for a give station-channel pair with different frequency bands. | e.g. `Appx/plot_CCF/cc_channel_collection/`|
+| [corrdata_BP.xxxx-BP.xxxx-cc_0.9-1.2.npz]() (← Link to download docs)  | ~50MB/pair | Cross-correlation function of 0.9-1.2Hz stored in `.npz` format. | `Appx/plot_CCF/data_npz/`  |
+| [monitoring_stats_uwbackup_2010-2022.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_uwbackup_2010-2022.tar.gz) | 82MB | dv/v datasheet associated with the Stretching and MWCS methods | `Post/ModelFit/data/`|
+| [MCMC_sampler_20000_v2_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_master.tar.gz)  | 3.3GB | Sampler of MCMC parameter search. | `Post/ModelFit/processed_data/` |
+| [modelparam_data_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_master.tar.gz)  | 84MB | Maximum likelihood model parameters. | `Post/ModelFit/` |
+| [MCMC_sampler_20000_v2_resheal.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_resheal.tar.gz)  | 138MB | Sampler of MCMC parameter search associated with the residual healing model. | `Appx/casestudy_residual_healing/processed_data_resheal` |
+| [MCMC_sampler_15000_v1_nobounds.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_15000_v1_nobounds.tar.gz)  | 2.1GB | Sampler of MCMC parameter search for the case without the bounds of model parameters. | `Others/get_MCMC_fixedparam/processed_data` |
+| [modelparam_data_fixedparam.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_fixedparam.tar.gz)  | 38MB | Sampler of MCMC parameter search for the case without the bounds of model parameters. | `Others/get_MCMC_fixedparam/` |
 
-> The stacked CorrData has the measurements in its misc (`C.misc`). `run_smstats.jl` gathers the measurements from stacked corrdata and output in csv table for post processing.
+## Development environment
+We developed the notebooks using Mac OS (Monterey 12.6.7). The environment of python is exported in `environment.yml`. We used the Julia v1.8.1, SeisIO v1.2.1, and SeisNoise v0.5.3. The other dependencies associated with Julia can be found in the tutorial in the [SeisMonitoring_Example](https://github.com/kura-okubo/SeisMonitoring_Example).
 
-## Post Processing
-
-`Post` contains the scripts and notebooks for the followings:
-
-1. Data availability
-2. Compute dv/v with channel weighting
-3. MCMC inversion of dv/v model parameters
-
-## Plot Figures
-
-`Figures` contains the scripts to plot
-1. Map of BP network
-2. Spectrogram of noise
-3. Statistical analysis of model parameters associated with dv/v
+## Reference

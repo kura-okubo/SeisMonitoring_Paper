@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Download CFs · SeisMonitoring Paper</title><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">SeisMonitoring Paper</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Index</a></li><li><a class="tocitem" href="../run_example/">Run examples</a></li><li class="is-active"><a class="tocitem" href>Download CFs</a><ul class="internal"><li><a class="tocitem" href="#Read-the-correlation-functions"><span>Read the correlation functions</span></a></li><li class="toplevel"><a class="tocitem" href="#Download-correlation-functions-in-.npz-format"><span>Download correlation functions in <code>.npz</code> format</span></a></li></ul></li><li><a class="tocitem" href="../plot_figures_recipe/">Recipe of figures</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Download CFs</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Download CFs</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/docs/src/download_correlations.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Download-correlation-functions-in-Julia-format"><a class="docs-heading-anchor" href="#Download-correlation-functions-in-Julia-format">Download correlation functions in Julia format</a><a id="Download-correlation-functions-in-Julia-format-1"></a><a class="docs-heading-anchor-permalink" href="#Download-correlation-functions-in-Julia-format" title="Permalink"></a></h1><p>You can download the correlation functions by selecting the station pairs and components:</p><!--- referemce: https://cs50.stackexchange.com/a/20716, https://stackoverflow.com/a/71051633 --->
+<div style="padding: 10px; margin-bottom: 10px; border: 1.5px solid #808080;">
+<form method="get">
+<label>https://dasway.ess.washington.edu/shared/kokubo/parkfield_correlations/</label>
+  <select name="correlations" id="correlations_st">
+      <option value="BP.CCRB-BP.CCRB">BP.CCRB-BP.CCRB</option>
+        <option value="BP.CCRB-BP.EADB">BP.CCRB-BP.EADB</option>
+        <option value="BP.CCRB-BP.FROB">BP.CCRB-BP.FROB</option>
+        <option value="BP.CCRB-BP.GHIB">BP.CCRB-BP.GHIB</option>
+        <option value="BP.CCRB-BP.JCNB">BP.CCRB-BP.JCNB</option>
+        <option value="BP.CCRB-BP.JCSB">BP.CCRB-BP.JCSB</option>
+        <option value="BP.CCRB-BP.LCCB">BP.CCRB-BP.LCCB</option>
+        <option value="BP.CCRB-BP.MMNB">BP.CCRB-BP.MMNB</option>
+        <option value="BP.CCRB-BP.RMNB">BP.CCRB-BP.RMNB</option>
+        <option value="BP.CCRB-BP.SCYB">BP.CCRB-BP.SCYB</option>
+        <option value="BP.CCRB-BP.SMNB">BP.CCRB-BP.SMNB</option>
+        <option value="BP.CCRB-BP.VARB">BP.CCRB-BP.VARB</option>
+        <option value="BP.CCRB-BP.VCAB">BP.CCRB-BP.VCAB</option>
+        <option value="BP.EADB-BP.EADB">BP.EADB-BP.EADB</option>
+        <option value="BP.EADB-BP.FROB">BP.EADB-BP.FROB</option>
+        <option value="BP.EADB-BP.GHIB">BP.EADB-BP.GHIB</option>
+        <option value="BP.EADB-BP.JCNB">BP.EADB-BP.JCNB</option>
+        <option value="BP.EADB-BP.JCSB">BP.EADB-BP.JCSB</option>
+        <option value="BP.EADB-BP.LCCB">BP.EADB-BP.LCCB</option>
+        <option value="BP.EADB-BP.MMNB">BP.EADB-BP.MMNB</option>
+        <option value="BP.EADB-BP.RMNB">BP.EADB-BP.RMNB</option>
+        <option value="BP.EADB-BP.SCYB">BP.EADB-BP.SCYB</option>
+        <option value="BP.EADB-BP.SMNB">BP.EADB-BP.SMNB</option>
+        <option value="BP.EADB-BP.VARB">BP.EADB-BP.VARB</option>
+        <option value="BP.EADB-BP.VCAB">BP.EADB-BP.VCAB</option>
+        <option value="BP.FROB-BP.FROB">BP.FROB-BP.FROB</option>
+        <option value="BP.FROB-BP.GHIB">BP.FROB-BP.GHIB</option>
+        <option value="BP.FROB-BP.JCNB">BP.FROB-BP.JCNB</option>
+        <option value="BP.FROB-BP.JCSB">BP.FROB-BP.JCSB</option>
+        <option value="BP.FROB-BP.LCCB">BP.FROB-BP.LCCB</option>
+        <option value="BP.FROB-BP.MMNB">BP.FROB-BP.MMNB</option>
+        <option value="BP.FROB-BP.RMNB">BP.FROB-BP.RMNB</option>
+        <option value="BP.FROB-BP.SCYB">BP.FROB-BP.SCYB</option>
+        <option value="BP.FROB-BP.SMNB">BP.FROB-BP.SMNB</option>
+        <option value="BP.FROB-BP.VARB">BP.FROB-BP.VARB</option>
+        <option value="BP.FROB-BP.VCAB">BP.FROB-BP.VCAB</option>
+        <option value="BP.GHIB-BP.GHIB">BP.GHIB-BP.GHIB</option>
+        <option value="BP.GHIB-BP.JCNB">BP.GHIB-BP.JCNB</option>
+        <option value="BP.GHIB-BP.JCSB">BP.GHIB-BP.JCSB</option>
+        <option value="BP.GHIB-BP.LCCB">BP.GHIB-BP.LCCB</option>
+        <option value="BP.GHIB-BP.MMNB">BP.GHIB-BP.MMNB</option>
+        <option value="BP.GHIB-BP.RMNB">BP.GHIB-BP.RMNB</option>
+        <option value="BP.GHIB-BP.SCYB">BP.GHIB-BP.SCYB</option>
+        <option value="BP.GHIB-BP.SMNB">BP.GHIB-BP.SMNB</option>
+        <option value="BP.GHIB-BP.VARB">BP.GHIB-BP.VARB</option>
+        <option value="BP.GHIB-BP.VCAB">BP.GHIB-BP.VCAB</option>
+        <option value="BP.JCNB-BP.JCNB">BP.JCNB-BP.JCNB</option>
+        <option value="BP.JCNB-BP.JCSB">BP.JCNB-BP.JCSB</option>
+        <option value="BP.JCNB-BP.LCCB">BP.JCNB-BP.LCCB</option>
+        <option value="BP.JCNB-BP.MMNB">BP.JCNB-BP.MMNB</option>
+        <option value="BP.JCNB-BP.RMNB">BP.JCNB-BP.RMNB</option>
+        <option value="BP.JCNB-BP.SCYB">BP.JCNB-BP.SCYB</option>
+        <option value="BP.JCNB-BP.SMNB">BP.JCNB-BP.SMNB</option>
+        <option value="BP.JCNB-BP.VARB">BP.JCNB-BP.VARB</option>
+        <option value="BP.JCNB-BP.VCAB">BP.JCNB-BP.VCAB</option>
+        <option value="BP.JCSB-BP.JCSB">BP.JCSB-BP.JCSB</option>
+        <option value="BP.JCSB-BP.LCCB">BP.JCSB-BP.LCCB</option>
+        <option value="BP.JCSB-BP.MMNB">BP.JCSB-BP.MMNB</option>
+        <option value="BP.JCSB-BP.RMNB">BP.JCSB-BP.RMNB</option>
+        <option value="BP.JCSB-BP.SCYB">BP.JCSB-BP.SCYB</option>
+        <option value="BP.JCSB-BP.SMNB">BP.JCSB-BP.SMNB</option>
+        <option value="BP.JCSB-BP.VARB">BP.JCSB-BP.VARB</option>
+        <option value="BP.JCSB-BP.VCAB">BP.JCSB-BP.VCAB</option>
+        <option value="BP.LCCB-BP.LCCB">BP.LCCB-BP.LCCB</option>
+        <option value="BP.LCCB-BP.MMNB">BP.LCCB-BP.MMNB</option>
+        <option value="BP.LCCB-BP.RMNB">BP.LCCB-BP.RMNB</option>
+        <option value="BP.LCCB-BP.SCYB">BP.LCCB-BP.SCYB</option>
+        <option value="BP.LCCB-BP.SMNB">BP.LCCB-BP.SMNB</option>
+        <option value="BP.LCCB-BP.VARB">BP.LCCB-BP.VARB</option>
+        <option value="BP.LCCB-BP.VCAB">BP.LCCB-BP.VCAB</option>
+        <option value="BP.MMNB-BP.MMNB">BP.MMNB-BP.MMNB</option>
+        <option value="BP.MMNB-BP.RMNB">BP.MMNB-BP.RMNB</option>
+        <option value="BP.MMNB-BP.SCYB">BP.MMNB-BP.SCYB</option>
+        <option value="BP.MMNB-BP.SMNB">BP.MMNB-BP.SMNB</option>
+        <option value="BP.MMNB-BP.VARB">BP.MMNB-BP.VARB</option>
+        <option value="BP.MMNB-BP.VCAB">BP.MMNB-BP.VCAB</option>
+        <option value="BP.RMNB-BP.RMNB">BP.RMNB-BP.RMNB</option>
+        <option value="BP.RMNB-BP.SCYB">BP.RMNB-BP.SCYB</option>
+        <option value="BP.RMNB-BP.SMNB">BP.RMNB-BP.SMNB</option>
+        <option value="BP.RMNB-BP.VARB">BP.RMNB-BP.VARB</option>
+        <option value="BP.RMNB-BP.VCAB">BP.RMNB-BP.VCAB</option>
+        <option value="BP.SCYB-BP.SCYB">BP.SCYB-BP.SCYB</option>
+        <option value="BP.SCYB-BP.SMNB">BP.SCYB-BP.SMNB</option>
+        <option value="BP.SCYB-BP.VARB">BP.SCYB-BP.VARB</option>
+        <option value="BP.SCYB-BP.VCAB">BP.SCYB-BP.VCAB</option>
+        <option value="BP.SMNB-BP.SMNB">BP.SMNB-BP.SMNB</option>
+        <option value="BP.SMNB-BP.VARB">BP.SMNB-BP.VARB</option>
+        <option value="BP.SMNB-BP.VCAB">BP.SMNB-BP.VCAB</option>
+        <option value="BP.VARB-BP.VARB">BP.VARB-BP.VARB</option>
+        <option value="BP.VARB-BP.VCAB">BP.VARB-BP.VCAB</option>
+        <option value="BP.VCAB-BP.VCAB">BP.VCAB-BP.VCAB</option>
+  </select>
+  <label>-</label>
+  <select name="correlations" id="correlations_chan">
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+  </select>
+  <label>.jld2</label>
+</form>
+<br>
+<button type="button" id="submit" style="font-size: 16px;">Download</button>
+
+</div>
+
+<script>
+document.getElementById('submit').onclick = function(){
+  window.location.href = "https://dasway.ess.washington.edu/shared/kokubo/parkfield_correlations/"+document.getElementById('correlations_st').value+"-"+document.getElementById('correlations_chan').value+".jld2";
+};
+</script>
+<h2 id="Read-the-correlation-functions"><a class="docs-heading-anchor" href="#Read-the-correlation-functions">Read the correlation functions</a><a id="Read-the-correlation-functions-1"></a><a class="docs-heading-anchor-permalink" href="#Read-the-correlation-functions" title="Permalink"></a></h2><p>You can read the correlation functions stored in the <code>.jld2</code> file as follows:</p><pre><code class="language-julia hljs">julia&gt; using SeisIO, SeisNoise, JLD2
+
+julia&gt; t = jldopen(&quot;/Users/kokubo/Dropbox/NIED_RESEARCH/SeisMonitoring_Paper/Appx/plot_CCF/data/BP.EADB-BP.LCCB-11.jld2&quot;, &quot;r&quot;)
+JLDFile /Users/kokubo/Dropbox/NIED_RESEARCH/SeisMonitoring_Paper/Appx/plot_CCF/data/BP.EADB-BP.LCCB-11.jld2 (read-only)
+ ├─📂 2002-01-01T00:00:00--2002-01-02T00:00:00
+ │  ├─🔢 0.2-0.5
+ │  ├─🔢 0.5-0.9
+ │  ├─🔢 0.9-1.2
+ │  └─🔢 1.2-2.0
+ ├─📂 2002-01-02T00:00:00--2002-01-03T00:00:00
+ │  ├─🔢 0.2-0.5
+ │  ├─🔢 0.5-0.9
+ │  └─ ⋯ (2 more entries)
+ └─ ⋯ (7256 more entries)
+
+julia&gt; C = t[&quot;2002-09-01T00:00:00--2002-09-02T00:00:00/0.9-1.2&quot;]
+CorrData with 1 Corrs
+      NAME: &quot;BP.EADB..BP1.BP.LCCB..BP1&quot;
+        ID: &quot;2002-09-01&quot;
+       LOC: 35.8952 N, -120.423 E, 224.0 m
+      COMP: &quot;11&quot;
+   ROTATED: false
+ CORR_TYPE: &quot;CC&quot;
+        FS: 20.0
+      GAIN: 1.0
+   FREQMIN: 0.9
+   FREQMAX: 1.2
+    CC_LEN: 3600.0
+   CC_STEP: 1800.0
+  WHITENED: false
+ TIME_NORM: &quot;&quot;
+      RESP: a0 1.0, f0 1.0, 1z, 1p
+      MISC: 10 entries
+     NOTES: 13 entries
+      DIST: 12.528
+       AZI: 318.74
+       BAZ: 138.686
+    MAXLAG: 100.0
+         T: 2002-09-01T00:30:00                …
+      CORR: 4001×1 Matrix{Float32}
+
+julia&gt;</code></pre><p>Here <code>C</code> is the type of <code>SeisNoise.CorrData</code> containing the correlation function in <code>C.corr</code> and the meta data. See the documentation of <a href="https://github.com/tclements/SeisNoise.jl/tree/master">SeisNoise.jl</a> for the usage of the <code>CorrData</code>.</p><div class="admonition is-info"><header class="admonition-header">Note</header><div class="admonition-body"><p>You can open the <code>.jld2</code> file <strong>using python with <code>h5py</code> module</strong>. See <a href="https://stackoverflow.com/a/51048456">https://stackoverflow.com/a/51048456</a>.</p></div></div><h1 id="Download-correlation-functions-in-.npz-format"><a class="docs-heading-anchor" href="#Download-correlation-functions-in-.npz-format">Download correlation functions in <code>.npz</code> format</a><a id="Download-correlation-functions-in-.npz-format-1"></a><a class="docs-heading-anchor-permalink" href="#Download-correlation-functions-in-.npz-format" title="Permalink"></a></h1><p>To plot the correlation function in <code>Appx/plot_CCF</code>, we generated the correlation functions associated with the frequency range of 0.9-1.2Hz in <a href="https://numpy.org/doc/stable/reference/routines.io.html#numpy-binary-files-npy-npz"><code>.npz</code></a> format. You can download and locate it in <code>Appx/plot_CCF/data_npz/</code> and run <code>Appx/plot_CCF/code/plot_ccf_master_v04_medianmute.ipynb</code> to plot the CFs.</p><div style="padding: 10px; margin-bottom: 10px; border: 1.5px solid #808080;">
+<form method="get">
+<label>https://dasway.ess.washington.edu/shared/kokubo/parkfield_ccf_data_npz/corrdata_</label>
+  <select name="correlations" id="correlations_npz">
+      <option value="BP.CCRB-BP.CCRB">BP.CCRB-BP.CCRB</option>
+        <option value="BP.CCRB-BP.EADB">BP.CCRB-BP.EADB</option>
+        <option value="BP.CCRB-BP.FROB">BP.CCRB-BP.FROB</option>
+        <option value="BP.CCRB-BP.GHIB">BP.CCRB-BP.GHIB</option>
+        <option value="BP.CCRB-BP.JCNB">BP.CCRB-BP.JCNB</option>
+        <option value="BP.CCRB-BP.JCSB">BP.CCRB-BP.JCSB</option>
+        <option value="BP.CCRB-BP.LCCB">BP.CCRB-BP.LCCB</option>
+        <option value="BP.CCRB-BP.MMNB">BP.CCRB-BP.MMNB</option>
+        <option value="BP.CCRB-BP.RMNB">BP.CCRB-BP.RMNB</option>
+        <option value="BP.CCRB-BP.SCYB">BP.CCRB-BP.SCYB</option>
+        <option value="BP.CCRB-BP.SMNB">BP.CCRB-BP.SMNB</option>
+        <option value="BP.CCRB-BP.VARB">BP.CCRB-BP.VARB</option>
+        <option value="BP.CCRB-BP.VCAB">BP.CCRB-BP.VCAB</option>
+        <option value="BP.EADB-BP.EADB">BP.EADB-BP.EADB</option>
+        <option value="BP.EADB-BP.FROB">BP.EADB-BP.FROB</option>
+        <option value="BP.EADB-BP.GHIB">BP.EADB-BP.GHIB</option>
+        <option value="BP.EADB-BP.JCNB">BP.EADB-BP.JCNB</option>
+        <option value="BP.EADB-BP.JCSB">BP.EADB-BP.JCSB</option>
+        <option value="BP.EADB-BP.LCCB">BP.EADB-BP.LCCB</option>
+        <option value="BP.EADB-BP.MMNB">BP.EADB-BP.MMNB</option>
+        <option value="BP.EADB-BP.RMNB">BP.EADB-BP.RMNB</option>
+        <option value="BP.EADB-BP.SCYB">BP.EADB-BP.SCYB</option>
+        <option value="BP.EADB-BP.SMNB">BP.EADB-BP.SMNB</option>
+        <option value="BP.EADB-BP.VARB">BP.EADB-BP.VARB</option>
+        <option value="BP.EADB-BP.VCAB">BP.EADB-BP.VCAB</option>
+        <option value="BP.FROB-BP.FROB">BP.FROB-BP.FROB</option>
+        <option value="BP.FROB-BP.GHIB">BP.FROB-BP.GHIB</option>
+        <option value="BP.FROB-BP.JCNB">BP.FROB-BP.JCNB</option>
+        <option value="BP.FROB-BP.JCSB">BP.FROB-BP.JCSB</option>
+        <option value="BP.FROB-BP.LCCB">BP.FROB-BP.LCCB</option>
+        <option value="BP.FROB-BP.MMNB">BP.FROB-BP.MMNB</option>
+        <option value="BP.FROB-BP.RMNB">BP.FROB-BP.RMNB</option>
+        <option value="BP.FROB-BP.SCYB">BP.FROB-BP.SCYB</option>
+        <option value="BP.FROB-BP.SMNB">BP.FROB-BP.SMNB</option>
+        <option value="BP.FROB-BP.VARB">BP.FROB-BP.VARB</option>
+        <option value="BP.FROB-BP.VCAB">BP.FROB-BP.VCAB</option>
+        <option value="BP.GHIB-BP.GHIB">BP.GHIB-BP.GHIB</option>
+        <option value="BP.GHIB-BP.JCNB">BP.GHIB-BP.JCNB</option>
+        <option value="BP.GHIB-BP.JCSB">BP.GHIB-BP.JCSB</option>
+        <option value="BP.GHIB-BP.LCCB">BP.GHIB-BP.LCCB</option>
+        <option value="BP.GHIB-BP.MMNB">BP.GHIB-BP.MMNB</option>
+        <option value="BP.GHIB-BP.RMNB">BP.GHIB-BP.RMNB</option>
+        <option value="BP.GHIB-BP.SCYB">BP.GHIB-BP.SCYB</option>
+        <option value="BP.GHIB-BP.SMNB">BP.GHIB-BP.SMNB</option>
+        <option value="BP.GHIB-BP.VARB">BP.GHIB-BP.VARB</option>
+        <option value="BP.GHIB-BP.VCAB">BP.GHIB-BP.VCAB</option>
+        <option value="BP.JCNB-BP.JCNB">BP.JCNB-BP.JCNB</option>
+        <option value="BP.JCNB-BP.JCSB">BP.JCNB-BP.JCSB</option>
+        <option value="BP.JCNB-BP.LCCB">BP.JCNB-BP.LCCB</option>
+        <option value="BP.JCNB-BP.MMNB">BP.JCNB-BP.MMNB</option>
+        <option value="BP.JCNB-BP.RMNB">BP.JCNB-BP.RMNB</option>
+        <option value="BP.JCNB-BP.SCYB">BP.JCNB-BP.SCYB</option>
+        <option value="BP.JCNB-BP.SMNB">BP.JCNB-BP.SMNB</option>
+        <option value="BP.JCNB-BP.VARB">BP.JCNB-BP.VARB</option>
+        <option value="BP.JCNB-BP.VCAB">BP.JCNB-BP.VCAB</option>
+        <option value="BP.JCSB-BP.JCSB">BP.JCSB-BP.JCSB</option>
+        <option value="BP.JCSB-BP.LCCB">BP.JCSB-BP.LCCB</option>
+        <option value="BP.JCSB-BP.MMNB">BP.JCSB-BP.MMNB</option>
+        <option value="BP.JCSB-BP.RMNB">BP.JCSB-BP.RMNB</option>
+        <option value="BP.JCSB-BP.SCYB">BP.JCSB-BP.SCYB</option>
+        <option value="BP.JCSB-BP.SMNB">BP.JCSB-BP.SMNB</option>
+        <option value="BP.JCSB-BP.VARB">BP.JCSB-BP.VARB</option>
+        <option value="BP.JCSB-BP.VCAB">BP.JCSB-BP.VCAB</option>
+        <option value="BP.LCCB-BP.LCCB">BP.LCCB-BP.LCCB</option>
+        <option value="BP.LCCB-BP.MMNB">BP.LCCB-BP.MMNB</option>
+        <option value="BP.LCCB-BP.RMNB">BP.LCCB-BP.RMNB</option>
+        <option value="BP.LCCB-BP.SCYB">BP.LCCB-BP.SCYB</option>
+        <option value="BP.LCCB-BP.SMNB">BP.LCCB-BP.SMNB</option>
+        <option value="BP.LCCB-BP.VARB">BP.LCCB-BP.VARB</option>
+        <option value="BP.LCCB-BP.VCAB">BP.LCCB-BP.VCAB</option>
+        <option value="BP.MMNB-BP.MMNB">BP.MMNB-BP.MMNB</option>
+        <option value="BP.MMNB-BP.RMNB">BP.MMNB-BP.RMNB</option>
+        <option value="BP.MMNB-BP.SCYB">BP.MMNB-BP.SCYB</option>
+        <option value="BP.MMNB-BP.SMNB">BP.MMNB-BP.SMNB</option>
+        <option value="BP.MMNB-BP.VARB">BP.MMNB-BP.VARB</option>
+        <option value="BP.MMNB-BP.VCAB">BP.MMNB-BP.VCAB</option>
+        <option value="BP.RMNB-BP.RMNB">BP.RMNB-BP.RMNB</option>
+        <option value="BP.RMNB-BP.SCYB">BP.RMNB-BP.SCYB</option>
+        <option value="BP.RMNB-BP.SMNB">BP.RMNB-BP.SMNB</option>
+        <option value="BP.RMNB-BP.VARB">BP.RMNB-BP.VARB</option>
+        <option value="BP.RMNB-BP.VCAB">BP.RMNB-BP.VCAB</option>
+        <option value="BP.SCYB-BP.SCYB">BP.SCYB-BP.SCYB</option>
+        <option value="BP.SCYB-BP.SMNB">BP.SCYB-BP.SMNB</option>
+        <option value="BP.SCYB-BP.VARB">BP.SCYB-BP.VARB</option>
+        <option value="BP.SCYB-BP.VCAB">BP.SCYB-BP.VCAB</option>
+        <option value="BP.SMNB-BP.SMNB">BP.SMNB-BP.SMNB</option>
+        <option value="BP.SMNB-BP.VARB">BP.SMNB-BP.VARB</option>
+        <option value="BP.SMNB-BP.VCAB">BP.SMNB-BP.VCAB</option>
+        <option value="BP.VARB-BP.VARB">BP.VARB-BP.VARB</option>
+        <option value="BP.VARB-BP.VCAB">BP.VARB-BP.VCAB</option>
+        <option value="BP.VCAB-BP.VCAB">BP.VCAB-BP.VCAB</option>
+  </select>
+  <label>-</label>
+  <select name="correlations" id="correlations_channpz">
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+  </select>
+  <label>_0.9-1.2.npz</label>
+</form>
+<br>
+<button type="button" id="submit_npz" style="font-size: 16px;">Download</button>
+
+</div>
+
+<script>
+document.getElementById('submit_npz').onclick = function(){
+  window.location.href = "https://dasway.ess.washington.edu/shared/kokubo/parkfield_ccf_data_npz/corrdata_"+document.getElementById('correlations_npz').value+"-"+document.getElementById('correlations_channpz').value+"_0.9-1.2.npz";
+};
+</script>
+<h3 id="Contents-of-.npz-corrfile"><a class="docs-heading-anchor" href="#Contents-of-.npz-corrfile">Contents of <code>.npz</code> corrfile</a><a id="Contents-of-.npz-corrfile-1"></a><a class="docs-heading-anchor-permalink" href="#Contents-of-.npz-corrfile" title="Permalink"></a></h3><table><tr><th style="text-align: left">key</th><th style="text-align: left">value</th></tr><tr><td style="text-align: left"><code>coda_init_factor</code></td><td style="text-align: left">coda window starts from the ballistic wave arrival time x <code>coda_init_factor</code></td></tr><tr><td style="text-align: left"><code>max_coda_length</code></td><td style="text-align: left">the end of coda window, which is fixed in this study</td></tr><tr><td style="text-align: left"><code>lags</code></td><td style="text-align: left">lag time vector</td></tr><tr><td style="text-align: left"><code>linstack</code></td><td style="text-align: left">linear stack reference of corrs over the entire study period</td></tr><tr><td style="text-align: left"><code>t</code></td><td style="text-align: left">time windows used for the linear stack</td></tr><tr><td style="text-align: left"><code>corr</code></td><td style="text-align: left">cross-correlation function</td></tr><tr><td style="text-align: left"><code>vel</code></td><td style="text-align: left">velocity used to estimate ballistic wave arrival time in [km/s]</td></tr><tr><td style="text-align: left"><code>codainit</code></td><td style="text-align: left">start time of coda window, symmetric with positive and negative lags</td></tr><tr><td style="text-align: left"><code>codaend</code></td><td style="text-align: left">end time of coda window, symmetric with positive and negative lags</td></tr></table><p>You can extract data as followings:</p><pre><code class="language-python hljs">import numpy as np
+D = np.load(f&quot;corrdata_{fi_stachanpair}_0.9-1.2.npz&quot;)
+lags = D[&quot;lags&quot;]
+t = D[&quot;t&quot;]
+corr_raw = D[&quot;corr&quot;]
+linstack_raw = D[&quot;linstack&quot;]
+codainit = D[&quot;codainit&quot;]
+codaend = D[&quot;codaend&quot;]</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../run_example/">« Run examples</a><a class="docs-footer-nextpage" href="../plot_figures_recipe/">Recipe of figures »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Saturday 2 September 2023 08:42">Saturday 2 September 2023</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -10,7 +10,7 @@ See the documentation for the instruction of running the examples, downloading t
 ## Example
 Input files and the output log of the ambient seismic noise processing using [**SeisMonitoring.jl**](https://github.com/kura-okubo/SeisMonitoring.jl).
 
-[**See the docs**]() to run the processing from downloading the data, cross-correlation, stacking, and measurement of dv/v.
+[**See the docs**](https://kura-okubo.github.io/SeisMonitoring_Paper/dev) to run the processing from downloading the data, cross-correlation, stacking, and measurement of dv/v.
 
 
 We also have the tutorial of the software in different Github repository: See [**SeisMonitoring_Example**](https://github.com/kura-okubo/SeisMonitoring_Example).
@@ -23,17 +23,15 @@ We also have the tutorial of the software in different Github repository: See [*
 
 <br>
 
-## Post
+## PostPost
 Post-processing of the cross-correlation and dv/v time history.
-### - Cumulative strain
+### - [Cumulative strain](Post/CumulativeStrain)
 Compute the strain field and evaluate the sensitivity of dv/v to the cumulative strain.
-### - Data availability
+### - [Data availability](Post/DataAvailability)
 Plot the availability of seismic data.
-
-### - Model fitting
+### - [Model fitting](Post/ModelFit)
 Fitting the model to the observed dv/v time history.
-
-### - Spectrogram
+### - [Spectrogram](Post/Spectrogram)
 Plot the spectrogram of the continuous seismic waveform.
 
 ## Maps
@@ -64,4 +62,4 @@ The intermediate files of the post-processing are available in the UW dasway.
 # Development environment of notebooks
 We developed the notebooks using Mac OS (Monterey 12.6.7). The environment of python is exported in `environment.yml`. We used the Julia v1.8.1, SeisIO v1.2.1, and SeisNoise v0.5.3. The other dependencies associated with Julia can be found in the tutorial in the [SeisMonitoring_Example](https://github.com/kura-okubo/SeisMonitoring_Example).
 
-## Reference
+# Reference

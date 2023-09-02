@@ -4,10 +4,10 @@
     This page shows the list of the link to the notebooks and codes to plot the figures. We cleaned up the output of the cells showing the figures in the notebooks due to minimizing the size of repositories and the copyrights. To replot them, please download the data and follow the instructions documented in the directories.
 
 
-- **Figure 1.** Map of Parkfield. Download and generate the input files such as `.grd` files following [`Maps/BPnetwork_introduction/README.md`](/Maps/BPnetwork_introduction). Then, run `plot_map_introduction_Parkfield.sh`
+- **Figure 1.** Map of Parkfield. Download and generate the input files such as `.grd` files following [`Maps/BPnetwork_introduction/README.md`]([linkroot]/Maps/BPnetwork_introduction). Then, run [`plot_map_introduction_Parkfield.sh`]([linkroot]/Maps/BPnetwork_introduction/)
 
 
-- **Figure 2.** Number of station-channel pairs. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb). See [`Post/ModelFit/README.md`](/Post/ModelFit/README.md) for the detail.
+- **Figure 2.** Number of station-channel pairs. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`]([linkroot]/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb). See [`Post/ModelFit/README.md`](/Post/ModelFit/README.md) for the detail.
 
 
 - **Figure 3.** All dv/v time history. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb).
@@ -90,3 +90,7 @@
 
 
 - **Figure S12.** The scaling of parallelization. Run [`Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb`](/Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb).
+
+
+[linkroot]: https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop
+

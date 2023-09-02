@@ -62,4 +62,20 @@ The intermediate files of the post-processing are available in the UW dasway.
 # Development environment of notebooks
 We developed the notebooks using Mac OS (Monterey 12.6.7). The environment of python is exported in `environment.yml`. We used the Julia v1.8.1, SeisIO v1.2.1, and SeisNoise v0.5.3. The other dependencies associated with Julia can be found in the tutorial in the [SeisMonitoring_Example](https://github.com/kura-okubo/SeisMonitoring_Example).
 
+You can create the python environment and launch the jupyter lab by
+```python
+git clone https://github.com/kura-okubo/SeisMonitoring_Paper.git
+cd SeisMonitoring_Paper
+conda env create -f environment.yml
+conda activate seismonitoring_paper
+jupyter lab
+```
+The default browser to open the jupyter lab can be changed following [here](https://stackoverflow.com/a/47793764).
+
+To remove (uninstall) the environment, run the followings:
+```
+conda deactivate
+conda env remove -n seismonitoring_paper
+```
+
 # Reference

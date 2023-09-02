@@ -1,9 +1,12 @@
 # SeisMonitoring Paper
 Input files and jupyter notebooks to reproduce the processings and figures associated with the  ambient seismic noise in Parkfield.
 
-## Contents
+# Documentation
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://kura-okubo.github.io/SeisMonitoring_Paper/dev)
 
-### Example
+# Contents
+
+## Example
 Input files and the output log of the ambient seismic noise processing using [**SeisMonitoring.jl**](https://github.com/kura-okubo/SeisMonitoring.jl).
 
 [**See the docs**]() to run the processing from downloading the data, cross-correlation, stacking, and measurement of dv/v.
@@ -19,29 +22,29 @@ We also have the tutorial of the software in different Github repository: See [*
 
 <br>
 
-### Post
+## Post
 Post-processing of the cross-correlation and dv/v time history.
-#### - Cumulative strain
+### - Cumulative strain
 Compute the strain field and evaluate the sensitivity of dv/v to the cumulative strain.
-#### - Data availability
+### - Data availability
 Plot the availability of seismic data.
 
-#### - Model fitting
+### - Model fitting
 Fitting the model to the observed dv/v time history.
 
-#### - Spectrogram
+### - Spectrogram
 Plot the spectrogram of the continuous seismic waveform.
 
-### Maps
+## Maps
 Plot the map and compute the fault normal distance of the seismic stations.
 
-### Others
+## Others
 Notebooks to test the codes.
 
-### Utils
+## Utils
 Some scripts used for manipulating the input and output of processings.
 
-## Download dataset
+# Download dataset
 The intermediate files of the post-processing are available in the UW dasway.
 
 | Filename | Size | Description  | Location in repo |
@@ -57,7 +60,7 @@ The intermediate files of the post-processing are available in the UW dasway.
 | [modelparam_data_fixedparam.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_fixedparam.tar.gz)  | 38MB | Sampler of MCMC parameter search for the case without the bounds of model parameters. | `Others/get_MCMC_fixedparam/` |
 | [monitoring_stats_TACCbackup.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_TACCbackup.tar.gz) | 452MB | archived dv/v datasheet of the case study in TACC | `Other/dvvanalysis_onTACC/data/`|
 
-## Development environment of notebooks
+# Development environment of notebooks
 We developed the notebooks using Mac OS (Monterey 12.6.7). The environment of python is exported in `environment.yml`. We used the Julia v1.8.1, SeisIO v1.2.1, and SeisNoise v0.5.3. The other dependencies associated with Julia can be found in the tutorial in the [SeisMonitoring_Example](https://github.com/kura-okubo/SeisMonitoring_Example).
 
 ## Reference

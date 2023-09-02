@@ -47,16 +47,17 @@ The intermediate files of the post-processing are available in the UW dasway.
 | Filename | Size | Description  | Location in repo |
 |---|---|---|---|
 | [SeisMonitoring_PPSDdata.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/SeisMonitoring_PPSDdata.tar.gz) | 1.4GB |  Probabilistic power spectral densities of the raw seismic data.  | `Post/Spectrogram/`|
-| [BP.xxxx-BP.xxxx-cc.jld2]() (← Link to download docs) | ~500MB/pair | Cross-correlation functions over 20 years for a give station-channel pair with different frequency bands. | e.g. `Appx/plot_CCF/cc_channel_collection/`|
-| [corrdata_BP.xxxx-BP.xxxx-cc_0.9-1.2.npz]() (← Link to download docs)  | ~50MB/pair | Cross-correlation function of 0.9-1.2Hz stored in `.npz` format. | `Appx/plot_CCF/data_npz/`  |
+| [BP.CCRB-BP.CCRB-11.jld2]() (← Link to download docs) | ~500MB/pair | Cross-correlation functions over 20 years for a give station-channel pair with different frequency bands. | e.g. `Appx/plot_CCF/cc_channel_collection/`|
+| [corrdata_BP.LCCB-BP.SCYB-11_0.9-1.2.npz]() (← Link to download docs)  | ~50MB/pair | Cross-correlation function of 0.9-1.2Hz stored in `.npz` format. | `Appx/plot_CCF/data_npz/`  |
 | [monitoring_stats_uwbackup_2010-2022.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_uwbackup_2010-2022.tar.gz) | 82MB | dv/v datasheet associated with the Stretching and MWCS methods | `Post/ModelFit/data/`|
 | [MCMC_sampler_20000_v2_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_master.tar.gz)  | 3.3GB | Sampler of MCMC parameter search. | `Post/ModelFit/processed_data/` |
 | [modelparam_data_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_master.tar.gz)  | 84MB | Maximum likelihood model parameters. | `Post/ModelFit/` |
 | [MCMC_sampler_20000_v2_resheal.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_resheal.tar.gz)  | 138MB | Sampler of MCMC parameter search associated with the residual healing model. | `Appx/casestudy_residual_healing/processed_data_resheal` |
 | [MCMC_sampler_15000_v1_nobounds.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_15000_v1_nobounds.tar.gz)  | 2.1GB | Sampler of MCMC parameter search for the case without the bounds of model parameters. | `Others/get_MCMC_fixedparam/processed_data` |
 | [modelparam_data_fixedparam.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_fixedparam.tar.gz)  | 38MB | Sampler of MCMC parameter search for the case without the bounds of model parameters. | `Others/get_MCMC_fixedparam/` |
+| [monitoring_stats_TACCbackup.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_TACCbackup.tar.gz) | 452MB | archived dv/v datasheet of the case study in TACC | `Other/dvvanalysis_onTACC/data/`|
 
-## Development environment
+## Development environment of notebooks
 We developed the notebooks using Mac OS (Monterey 12.6.7). The environment of python is exported in `environment.yml`. We used the Julia v1.8.1, SeisIO v1.2.1, and SeisNoise v0.5.3. The other dependencies associated with Julia can be found in the tutorial in the [SeisMonitoring_Example](https://github.com/kura-okubo/SeisMonitoring_Example).
 
 ## Reference

@@ -3,6 +3,7 @@ Input files and jupyter notebooks to reproduce the processings and figures assoc
 
 # Documentation
 See the documentation for the instruction of running the examples, downloading the cross-correlation data and the recipe of generating the figures.
+
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://kura-okubo.github.io/SeisMonitoring_Paper/dev)
 
 # Contents
@@ -50,8 +51,8 @@ The intermediate files of the post-processing are available in the UW dasway.
 | Filename | Size | Description  | Location in repo |
 |---|---|---|---|
 | [SeisMonitoring_PPSDdata.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/SeisMonitoring_PPSDdata.tar.gz) | 1.4GB |  Probabilistic power spectral densities of the raw seismic data.  | `Post/Spectrogram/`|
-| [BP.CCRB-BP.CCRB-11.jld2]() (← Link to download docs) | ~500MB/pair | Cross-correlation functions over 20 years for a give station-channel pair with different frequency bands. | e.g. `Appx/plot_CCF/cc_channel_collection/`|
-| [corrdata_BP.LCCB-BP.SCYB-11_0.9-1.2.npz]() (← Link to download docs)  | ~50MB/pair | Cross-correlation function of 0.9-1.2Hz stored in `.npz` format. | `Appx/plot_CCF/data_npz/`  |
+| [BP.CCRB-BP.CCRB-11.jld2](https://kura-okubo.github.io/SeisMonitoring_Paper/dev/download_correlations/) (← Link to download docs) | ~500MB/pair | Cross-correlation functions over 20 years for a give station-channel pair with different frequency bands. | e.g. `Appx/plot_CCF/cc_channel_collection/`|
+| [corrdata_BP.LCCB-BP.SCYB-11_0.9-1.2.npz](https://kura-okubo.github.io/SeisMonitoring_Paper/dev/download_correlations/) (← Link to download docs)  | ~50MB/pair | Cross-correlation function of 0.9-1.2Hz stored in `.npz` format. | `Appx/plot_CCF/data_npz/`  |
 | [monitoring_stats_uwbackup_2010-2022.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_uwbackup_2010-2022.tar.gz) | 82MB | dv/v datasheet associated with the Stretching and MWCS methods | `Post/ModelFit/data/`|
 | [MCMC_sampler_20000_v2_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/MCMC_sampler_20000_v2_master.tar.gz)  | 3.3GB | Sampler of MCMC parameter search. | `Post/ModelFit/processed_data/` |
 | [modelparam_data_master.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/modelparam_data_master.tar.gz)  | 84MB | Maximum likelihood model parameters. | `Post/ModelFit/` |

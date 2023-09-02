@@ -2,10 +2,10 @@
 Input files and jupyter notebooks to reproduce the processings and figures associated with the  ambient seismic noise in Parkfield.
 
 # Documentation
+See the documentation for the instruction of running the examples, downloading the cross-correlation data and the recipe of generating the figures.
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://kura-okubo.github.io/SeisMonitoring_Paper/dev)
 
 # Contents
-
 ## Example
 Input files and the output log of the ambient seismic noise processing using [**SeisMonitoring.jl**](https://github.com/kura-okubo/SeisMonitoring.jl).
 
@@ -44,7 +44,7 @@ Notebooks to test the codes.
 ## Utils
 Some scripts used for manipulating the input and output of processings.
 
-# Download dataset
+# Download list of dataset
 The intermediate files of the post-processing are available in the UW dasway.
 
 | Filename | Size | Description  | Location in repo |

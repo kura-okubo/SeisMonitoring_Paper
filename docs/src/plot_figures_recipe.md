@@ -1,51 +1,51 @@
 # Recipe of plotting the figures
 
-- **Figure 1.** Map of Parkfield. Download and generate the input files such as `.grd` files following `Maps/BPnetwork_introduction/README.md`. Then, run `plot_map_introduction_Parkfield.sh`
+- **Figure 1.** Map of Parkfield. Download and generate the input files such as `.grd` files following [`Maps/BPnetwork_introduction/README.md`](https://github.com/kura-okubo/SeisMonitoring_Paper/tree/develop/Maps/BPnetwork_introduction). Then, run `plot_map_introduction_Parkfield.sh`
 
 
-- **Figure 2.** Number of station-channel pairs. Run `Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`. See `Post/ModelFit/README.md` for the detail.
+- **Figure 2.** Number of station-channel pairs. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb). See [`Post/ModelFit/README.md`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/README.md) for the detail.
 
 
-- **Figure 3.** All dv/v time history. Run `Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`.
+- **Figure 3.** All dv/v time history. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb).
 
 
-- **Figure 4.** Dv/v with different station-channel pairs. Run `Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`.
+- **Figure 4.** Dv/v with different station-channel pairs. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb).
 
 
-- **Figure 5.** Dv/v with different frequency bands. Run `Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`.
+- **Figure 5.** Dv/v with different frequency bands. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb).
 
 
 - **Figure 6.** Schematic of dv/v model components. Run `Appx/modelschematic/plot_model_schematics_dvv.ipynb` to generate the time histories of model components. The data is imported from the `Post/ModelFit/data/interped_tempandprecip_longterm.csv`.
 
 
-- **Figure 7.** Scatter matrix of MCMC with stretching, LCCB-SCYB. Run `Post/ModelFit/code/plotfigure_MCMCscattermatrix_stretching.ipynb`. You need to download the output of the MCMC sampler. See the details in `Post/ModelFit/README.md`
+- **Figure 7.** Scatter matrix of MCMC using stretching associated with LCCB-SCYB. Run [`Post/ModelFit/code/plotfigure_MCMCscattermatrix_stretching.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_MCMCscattermatrix_stretching.ipynb). You need to download the output of the MCMC sampler. See the details in [`Post/ModelFit/README.md`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/README.md#5-collect-the-result-of-mcmc-sampler-and-the-dvv).
 
 
-- **Figure 8.** Scatter matrix of MCMC with MWCS, LCCB-SCYB. Run `Post/ModelFit/code/plotfigure_MCMCscattermatrix_mwcs.ipynb`.
+- **Figure 8.** Scatter matrix of MCMC using MWCS associated with LCCB-SCYB. Run [`Post/ModelFit/code/plotfigure_MCMCscattermatrix_mwcs.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_MCMCscattermatrix_mwcs.ipynb).
 
 
-- **Figure 9.** Fitting of dv/v with stretching. Run `Post/ModelFit/code/plotfigure_MCMCdvvmodelfit.ipynb`. You can select the `dvvmethod` as stretching or MWCS.
+- **Figure 9.** Fitting of dv/v with stretching. Run [`Post/ModelFit/code/plotfigure_MCMCdvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_MCMCdvvmodelfit.ipynb). You can select the `dvvmethod` as stretching or MWCS.
 
 
-- **Figure 10.** Fitting of dv/v with MWCS. Run `Post/ModelFit/code/plotfigure_MCMCdvvmodelfit.ipynb`.
+- **Figure 10.** Fitting of dv/v with MWCS. Run [`Post/ModelFit/code/plotfigure_MCMCdvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/plotfigure_MCMCdvvmodelfit.ipynb).
 
 
-- **Figure 11.** Stats plot of model parameters. Run `Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb`.
+- **Figure 11.** Stats plot of model parameters. Run [`Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb).
 
 
-- **Figure 12.** Model fit with the residual healing model. Run `Appx/casestudy_residual_healing/code/resheal_plot_MCMCdvvmodelfit.ipynb`
+- **Figure 12.** Model fit with the residual healing model. Run [`Appx/casestudy_residual_healing/code/resheal_plot_MCMCdvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Appx/casestudy_residual_healing/code/resheal_plot_MCMCdvvmodelfit.ipynb).
 
 
-- **Figure 13.** Cumulative dilation and shear strains. Run `Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`.
+- **Figure 13.** Cumulative dilation and shear strains. Run [`Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb).
 
 
-- **Figure 14.** Sensitivity of dv/v to the dilation and shear strains. Run `Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`.
+- **Figure 14.** Sensitivity of dv/v to the dilation and shear strains. Run [`Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb).
 
 
-- **Figure 15.** Rotated axial strain and its sensitivity. Run `Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`.
+- **Figure 15.** Rotated axial strain and its sensitivity. Run [`Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb).
 
 
-- **Figure A1** Comparison of dv/v and LFE activity. Run `Appx/comparison_ParkfieldTremorrate/code/comparison_ParkfieldLFErate.ipynb`.
+- **Figure A1** Comparison of dv/v and LFE activity. Run [`Appx/comparison_ParkfieldTremorrate/code/comparison_ParkfieldLFErate.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/develop/Appx/comparison_ParkfieldTremorrate/code/comparison_ParkfieldLFErate.ipynb).
 
 
 ---

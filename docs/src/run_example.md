@@ -27,8 +27,8 @@ In the early development of software tools using [TACC FRONTERA](https://fronter
 !!! note "Archived dv/v datasheets"
     We investigated the case studies listed above to check the effect of reference period, normalizations and stacking methods to the dv/v time history. Indeed, it only causes minor differences in dv/v and does not modify the conclusions. However, as we have updated the software tools even after the the jobs done in FRONTERA and extended the study period from 2020 to 2022, we keep those case studies as the archives here.   
 
-The archived dv/v datasheets are available in [`monitoring_stats_TACCbackup.tar.gz`]()
-The plots of the comparison between the master data sheets and the case study on Frontera can be found in [`Others/dvvanalysis_onTACC`](Others/dvvanalysis_onTACC),
+The archived dv/v datasheets are available in [`monitoring_stats_TACCbackup.tar.gz`](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_TACCbackup.tar.gz)
+The plots of the comparison between the master data sheets and the case study on Frontera can be found in [`Others/dvvanalysis_onTACC`](https://github.com/kura-okubo/SeisMonitoring_Paper/tree/develop/Others/dvvanalysis_onTACC),
 
 
 ## How to run the projects

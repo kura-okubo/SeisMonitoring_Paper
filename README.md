@@ -5,6 +5,7 @@ Input files and jupyter notebooks to reproduce the processings and figures assoc
 See the documentation for the instruction of running the examples, downloading the cross-correlation data and the recipe of generating the figures.
 
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://kura-okubo.github.io/SeisMonitoring_Paper/dev)
+[![Documentation](https://github.com/kura-okubo/SeisMonitoring_Paper/actions/workflows/documentation.yml/badge.svg?branch=master)](https://github.com/kura-okubo/SeisMonitoring_Paper/actions/workflows/documentation.yml)
 
 # Contents
 ## Example

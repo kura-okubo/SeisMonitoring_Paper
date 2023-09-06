@@ -3,6 +3,7 @@
 __pycache__
 
 docs/build
+debug_*
 
 # Map
 Maps/BPnetwork_introduction/geotiff_from_USGS_3DEP
@@ -13,6 +14,7 @@ Maps/BPnetwork_introduction/*.history
 Maps/BPnetwork_introduction/*.kml
 Maps/BPnetwork_introduction/*.ai
 Maps/BPnetwork_introduction/*.png
+Maps/BPnetwork_introduction/*.eps
 Maps/BPnetwork_introduction/gmt_shelly2017ssefamily.txt
 
 Maps/BPnetwork_Faultdist/compute_faultnormaldistance/note

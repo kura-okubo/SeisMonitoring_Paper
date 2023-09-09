@@ -14,7 +14,7 @@ We stored the cross-correlation functions, dv/v data sheets, best likelihood mod
 
 | Filename | Size | Description  | Location in repo |
 |---|---|---|---|
-| [ SeisMonitoring_PPSDdata.tar.gz](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/SeisMonitoring_PPSDdata.tar.gz) | 1.4GB |  Probabilistic power spectral densities of the raw seismic data.  | `Post/Spectrogram/`|
+| [ `SeisMonitoring_PPSDdata.tar.gz` ](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/SeisMonitoring_PPSDdata.tar.gz) | 1.4GB |  Probabilistic power spectral densities of the raw seismic data.  | `Post/Spectrogram/`|
 | [ `BP.CCRB-BP.CCRB-11.jld2` ](https://kura-okubo.github.io/SeisMonitoring_Paper/stable/download_correlations/) (← Link to download docs) | ~500MB/pair | Cross-correlation functions over 20 years for a give station-channel pair with different frequency bands. | e.g. `Appx/plot_CCF/cc_channel_collection/`|
 | [ `corrdata_BP.LCCB-BP.SCYB-11_0.9-1.2.npz` ](https://kura-okubo.github.io/SeisMonitoring_Paper/stable/download_correlations/) (← Link to download docs)  | ~50MB/pair | Cross-correlation function of 0.9-1.2Hz stored in `.npz` format. | `Appx/plot_CCF/data_npz/`  |
 | [ `monitoring_stats_uwbackup_2010-2022.tar.gz` ](https://dasway.ess.washington.edu/shared/kokubo/parkfield_data/monitoring_stats_uwbackup_2010-2022.tar.gz) | 82MB | dv/v datasheet associated with the Stretching and MWCS methods | `Post/ModelFit/data/`|

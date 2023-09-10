@@ -134,8 +134,8 @@ You can read the correlation functions stored in the `.jld2` file as follows:
 ```julia
 julia> using SeisIO, SeisNoise, JLD2
 
-julia> t = jldopen("/Users/kokubo/Dropbox/NIED_RESEARCH/SeisMonitoring_Paper/Appx/plot_CCF/data/BP.EADB-BP.LCCB-11.jld2", "r")
-JLDFile /Users/kokubo/Dropbox/NIED_RESEARCH/SeisMonitoring_Paper/Appx/plot_CCF/data/BP.EADB-BP.LCCB-11.jld2 (read-only)
+julia> t = jldopen("SeisMonitoring_Paper/Appx/plot_CCF/data/BP.EADB-BP.LCCB-11.jld2", "r")
+JLDFile SeisMonitoring_Paper/Appx/plot_CCF/data/BP.EADB-BP.LCCB-11.jld2 (read-only)
  ├─📂 2002-01-01T00:00:00--2002-01-02T00:00:00
  │  ├─🔢 0.2-0.5
  │  ├─🔢 0.5-0.9
@@ -177,10 +177,6 @@ julia>
 ```
 
 Here `C` is the type of `SeisNoise.CorrData` containing the correlation function in `C.corr` and the meta data. See the documentation of [SeisNoise.jl](https://github.com/tclements/SeisNoise.jl/tree/master) for the usage of the `CorrData`.
-
-!!! note
-    You can open the `.jld2` file **using python with `h5py` module**. See [https://stackoverflow.com/a/51048456](https://stackoverflow.com/a/51048456).
-
 
 # Download correlation functions in `.npz` format
 

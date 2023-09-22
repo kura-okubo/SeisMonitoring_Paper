@@ -8,6 +8,9 @@ See the documentation for the instruction of running the examples, downloading t
 [![Documentation](https://github.com/kura-okubo/SeisMonitoring_Paper/actions/workflows/documentation.yml/badge.svg?branch=master)](https://github.com/kura-okubo/SeisMonitoring_Paper/actions/workflows/documentation.yml)
 [![DOI](https://zenodo.org/badge/343242440.svg)](https://zenodo.org/badge/latestdoi/343242440)
 
+## Recipe of figures
+See [**the recipe of figures**](https://kura-okubo.github.io/SeisMonitoring_Paper/dev/plot_figures_recipe/) to perform the post-processing and plot figures.
+
 # Contents
 ## Example
 Input files and the output log of the ambient seismic noise processing using [**SeisMonitoring.jl**](https://github.com/kura-okubo/SeisMonitoring.jl).

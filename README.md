@@ -49,7 +49,7 @@ Notebooks to test the codes.
 Some scripts used for manipulating the input and output of processings.
 
 # Download list of dataset
-The intermediate files of the post-processing are available in the UW dasway.
+The intermediate files of the post-processing are available in the UW dasway (doi: [10.6069/PK9D-9411](https://doi.org/10.6069/PK9D-9411)).
 
 | Filename | Size | Description  | Location in repo |
 |---|---|---|---|

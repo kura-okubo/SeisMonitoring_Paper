@@ -37,10 +37,10 @@ To execute the process flow, we first configure the init file, e.g. `Example/ini
 !!! note
     The output directory is specified in the julia scripts as `project_outputdir`. We need disk space enough to store the raw and intermediate data (CCFs, stacked CorrData).
 
-Then, we run the job using the `topo_multi_slurm_run.jl` and `topo_slurm_multi.slurm`. These work flow is summarized in the [tutorial of SeisMonitoring.jl](https://nbviewer.org/github/kura-okubo/SeisMonitoring_Example/blob/main/code/run_seismonitoring.ipynb).
+Then, we run the job using the `topo_multi_slurm_run.jl` and `topo_slurm_multi.slurm`. These work flows are summarized in the [tutorial of SeisMonitoring.jl](https://nbviewer.org/github/kura-okubo/SeisMonitoring_Example/blob/main/code/run_seismonitoring.ipynb).
 
 !!! note
-    We performed the casestudy with Slurm Workload Manager in Frontera, while we run the job in workstation such that
+    We performed the casestudy with Slurm Workload Manager in Frontera, while we can also run the job in a workstation such that
     ```
     #!/bin/bash
 

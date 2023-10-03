@@ -143,3 +143,4 @@ Others/modelcheck_precipitation
 Others/get_MCMC_fixedparam/figure
 Others/get_MCMC_fixedparam/figure_stats/MCMC_alldvvfit_*
 Others/get_MCMC_fixedparam/modelparam_data*
+Others/get_MCMC_fixedparam/processed_data

@@ -12,7 +12,7 @@ See the documentation for the instruction of running the examples, downloading t
 See [**the recipe of figures**](https://kura-okubo.github.io/SeisMonitoring_Paper/dev/plot_figures_recipe/) to perform the post-processing and plot figures.
 
 # Contents
-## Example
+## Examples
 Input files and the output log of the ambient seismic noise processing using [**SeisMonitoring.jl**](https://github.com/kura-okubo/SeisMonitoring.jl).
 
 [**See the docs**](https://kura-okubo.github.io/SeisMonitoring_Paper/dev) to run the processing from downloading the data, cross-correlation, stacking, and measurement of dv/v.

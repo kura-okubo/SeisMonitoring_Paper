@@ -28,7 +28,7 @@ We also have the tutorial of the software in different Github repository: See [*
 
 <br>
 
-## PostPost
+## Post
 Post-processing of the cross-correlation and dv/v time history.
 ### - [Cumulative strain](Post/CumulativeStrain)
 Compute the strain field and evaluate the sensitivity of dv/v to the cumulative strain.

@@ -49,9 +49,6 @@
 - **Figure 15.** Rotated axial strain and its sensitivity. Run [`Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/CumulativeStrain/code/06_plotcomparison_dvvandstrain.ipynb).
 
 
-- **Figure A1** Comparison of dv/v and LFE activity. Run [`Appx/comparison_ParkfieldTremorrate/code/comparison_ParkfieldLFErate.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/comparison_ParkfieldTremorrate/code/comparison_ParkfieldLFErate.ipynb).
-
-
 ---
 
 - **Figure S1.** Map with the station names and the approximated planar fault. Run [`Maps/BPnetwork_Faultdist/BPnetwork_GMT_local/plot_BPnetwork_GMTlocal.sh`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Maps/BPnetwork_Faultdist/BPnetwork_GMT_local/plot_BPnetwork_GMTlocal.sh).
@@ -68,25 +65,27 @@
 
 - **Figure S5.** Cross-correlation functions associated with the LCCB-SCYB. Run [`Appx/plot_CCF/code/plot_ccf_master_v04_medianmute.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/plot_CCF/code/plot_ccf_master_v04_medianmute.ipynb) to plot the CCFs over 20 years for the 9 components associated with a given station pair. As the data size is large, we plotted the all station pairs using [`Appx/plot_CCF/code/plot_ccf_master_v04_medianmute.py`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/plot_CCF/code/plot_ccf_master_v04_medianmute.py) in the work stations. In the notebook, you can download an example of the set of CCF data from [here](https://kura-okubo.github.io/SeisMonitoring_Paper/dev/download_correlations/#Download-correlation-functions-in-.npz-format). **NOTE:** To recreate the `.npz` file, we can also download the cross-correlation file with .jld2 from dasway and locate it in `Appx/plot_CCF/cc_channel_collection/`. Then, run [`convert_ccf_threads_uwcascadia.jl`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/plot_CCF/code/convert_ccf_threads_uwcascadia.jl) to convert the data to the `.npz` format. We can plot the CFs using the dataset in the `.npz` format.
 
-- **Figure S6.** Dv/v time histories with channel-weighted station pairs for the case with the stretching. Run [`Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb).
+- **Figure S6** Comparison of dv/v and LFE activity. Run [`Appx/comparison_ParkfieldLFErate/code/comparison_ParkfieldLFErate.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/comparison_ParkfieldLFErate/code/comparison_ParkfieldLFErate.ipynb).
+
+- **Figure S7.** Dv/v time histories with channel-weighted station pairs for the case with the stretching. Run [`Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb).
 
 
-- **Figure S7.** Dv/v time histories with channel-weighted station pairs for the case with the MWCS. Run [`Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb).
+- **Figure S8.** Dv/v time histories with channel-weighted station pairs for the case with the MWCS. Run [`Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/plotfigure_alldvvmodelfit.ipynb).
 
 
-- **Figure S8.** The long-term increase in dv/v with different frequency bands. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb).
+- **Figure S9.** The long-term increase in dv/v with different frequency bands. Run [`Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/plotfigure_plotdvvpsd.ipynb).
 
 
-- **Figure S9.** Sensitivity kernel with depth. Run [`Appx/BP_sensitivity_kernel/plot_sensitivity_kernel_Parkfield.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/BP_sensitivity_kernel/plot_sensitivity_kernel_Parkfield.ipynb). See the details in [`Appx/BP_sensitivity_kernel/README.md`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/BP_sensitivity_kernel/README.md).
+- **Figure S10.** Sensitivity kernel with depth. Run [`Appx/BP_sensitivity_kernel/plot_sensitivity_kernel_Parkfield.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/BP_sensitivity_kernel/plot_sensitivity_kernel_Parkfield.ipynb). See the details in [`Appx/BP_sensitivity_kernel/README.md`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/BP_sensitivity_kernel/README.md).
 
 
-- **Figure S10.** Trade-off between S, τmin and τmax. Run [`Appx/tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_v2.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_v2.ipynb) to conduct the MCMC parameter search associated with the S, tau_min and tau_max. Then, run [`tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_plotmaster.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_plotmaster.ipynb) to plot the summary figure.
+- **Figure S11.** Trade-off between S, τmin and τmax. Run [`Appx/tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_v2.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_v2.ipynb) to conduct the MCMC parameter search associated with the S, tau_min and tau_max. Then, run [`tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_plotmaster.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/tradeoff_logheal_SandTmax/code/tradeoff_logheal_SandTminTmax_plotmaster.ipynb) to plot the summary figure.
 
 
-- **Figure S11.** Scatter matrix with MWCS, residual healing model. Run [`Appx/casestudy_residual_healing/code/resheal_plot_MCMCscattermatrix_mwcs.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/casestudy_residual_healing/code/resheal_plot_MCMCscattermatrix_mwcs.ipynb)
+- **Figure S12.** Scatter matrix with MWCS, residual healing model. Run [`Appx/casestudy_residual_healing/code/resheal_plot_MCMCscattermatrix_mwcs.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/casestudy_residual_healing/code/resheal_plot_MCMCscattermatrix_mwcs.ipynb)
 
 
-- **Figure S12.** The coefficient of $b_0$ with the fault-normal distance. Run [`Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb).
+- **Figure S13.** The coefficient of $b_0$ with the fault-normal distance. Run [`Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Post/ModelFit/code/modelfit_07_MCMC_plotstats.ipynb).
 
 
-- **Figure S13.** The scaling of parallelization. Run [`Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb).
+- **Figure S14.** The scaling of parallelization. Run [`Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb).

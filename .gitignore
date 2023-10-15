@@ -100,9 +100,9 @@ Appx/weighting_integral_Gauss/df_deltastrain_all.csv
 Appx/weighting_integral_Gauss/figure
 
 # comparison to the tremor rate
-Appx/comparison_ParkfieldTremorrate/figure
-Appx/comparison_ParkfieldTremorrate/reference
-Appx/comparison_ParkfieldTremorrate/data/*.png
+Appx/comparison_ParkfieldLFErate/figure
+Appx/comparison_ParkfieldLFErate/reference
+Appx/comparison_ParkfieldLFErate/data/*.png
 
 ---
 

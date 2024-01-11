@@ -111,7 +111,9 @@ for fi_stachanpair in ccfdata_path_all
         #auto correlation
         ci = [-min_ballistic_twin, min_ballistic_twin]
     else
-        ci = [-coda_init_factor*C.dist/vel, coda_init_factor*C.dist/vel]
+        codainit = np.max([min_ballistic_twin, coda_init_factor*C.dist/vel])
+#         ci = [-coda_init_factor*C.dist/vel, coda_init_factor*C.dist/vel]
+        ci = [-codainit, codainit]
     end
     ce = [-max_coda_length , max_coda_length]
 

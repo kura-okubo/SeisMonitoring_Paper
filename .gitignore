@@ -144,3 +144,12 @@ Others/get_MCMC_fixedparam/figure
 Others/get_MCMC_fixedparam/figure_stats/MCMC_alldvvfit_*
 Others/get_MCMC_fixedparam/modelparam_data*
 Others/get_MCMC_fixedparam/processed_data
+
+Others/coseismic_strain/coulomb3402
+Others/coseismic_strain/compute_strain_BP/figure/*
+Others/coseismic_strain/compute_strain_BP/code/*.asv
+Others/coseismic_strain/coulomb33_inputfiles/*.mat
+Others/coseismic_strain/coulomb33_inputfiles/*.cou
+Others/coseismic_strain/plot_strain_gmt/BP_StrainChange_dilation.xyz
+Others/coseismic_strain/plot_strain_gmt/BP_dilation.*
+Others/coseismic_strain/plot_strain_gmt/*.cpt

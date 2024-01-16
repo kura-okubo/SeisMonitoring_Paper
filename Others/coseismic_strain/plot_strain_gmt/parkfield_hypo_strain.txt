@@ -1,0 +1,2 @@
+# use the values from preset SRCMOD_JUL07 s2004PARKFIjich as we used this to compute the strain
+-120.3706, 35.8185

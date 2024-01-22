@@ -109,7 +109,7 @@ for station in station_list
 		hl = hline!([0.9, 1.2], lw=1.0, ls=:dash, c="white", label="")
 
 		# vlines for earthquakes
-		vlines = [Dates.DateTime(2003, 12, 12), Dates.DateTime(2004, 9, 28), Dates.DateTime(2014, 8, 24)]
+		vlines = [Dates.DateTime(2003, 12, 22), Dates.DateTime(2004, 9, 28), Dates.DateTime(2014, 8, 24)]
 		vl = vline!(vlines, lw=1.5, ls=:dot, c="white", label="")
 
 		p = plot!(size=(1000,500))

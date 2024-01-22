@@ -10,7 +10,7 @@ import pickle
 
 def plot_scattermatrix(A, datainds, labels, left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.05, hspace=0.05,
     xrange_sigma_factor=3, bincolorgray=0.7, nbin_hist=20, nbin_hist2d=20, Ncontourf=101, Ncontour=7, Ncontour_clip=6, cmap="viridis",
-    xticks=None, yticks=None, plot_truth=True,
+    xticks=None, yticks=None, plot_truth=True, rastarized=True,
     ylim_max=None, zlim_max=None, xranges=None, plot_median=False, plot_bestparam=False, labelfontsize=20, tickfontsize=14, figsize=(12, 12)):
 
     """
@@ -195,7 +195,12 @@ def plot_scattermatrix(A, datainds, labels, left=0.1, right=0.9, bottom=0.1, top
             levels = mnloc.tick_values(0, Z2.max()) 
             levels_clipped = levels[Ncontour-Ncontour_clip:]# remove the lower levels
 
-            ax.contourf(mX2, mY2, Z2.T, Ncontourf, norm=norm_Z, zorder=-10, cmap=cmap)
+            h1 = ax.contourf(mX2, mY2, Z2.T, Ncontourf, norm=norm_Z, zorder=-10, cmap=cmap)
+
+            if rastarized==True:
+                # Rasterize the contour
+                for c in h1.collections:
+                    c.set_rasterized(True)
             
             # plot contour line
             ax.contour(mX2, mY2, Z2.T, levels_clipped, norm=norm_Z, colors='k', zorder=-9, linewidths=0.8)

@@ -36,7 +36,7 @@ echo "${minx} ${miny}" >> studyarea_local.txt
 
 boxlinecolor=black
 
-gmt begin map_BPnetwork_local png
+gmt begin map_BPnetwork_local eps
 
 	gmt basemap -JM${size} -R${range} -Ba.1f0.1 -BWSNE -L${scale} -Xc -Yc 
 

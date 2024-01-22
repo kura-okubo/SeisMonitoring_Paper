@@ -35,7 +35,7 @@ edgefile=../../data/triangular_edges.xy   	   # triangular edge file
 GPSsitefile=../../data/BP_GPSstations_GMT.xy   # GPS location file
 gaussiancirclefile=../../data/BP_gaussianregion.txt 
 
-gmt begin ../../figure/plotmap/BP_gaussianrange_schematic png
+gmt begin ../../figure/plotmap/BP_gaussianrange_schematic eps
 
 	gmt basemap -JM${size} -R${range} -Ba.2f0.1 -BWSNE  -Xc -Yc
 

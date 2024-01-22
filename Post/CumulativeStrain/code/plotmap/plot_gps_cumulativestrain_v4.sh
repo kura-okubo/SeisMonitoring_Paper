@@ -114,7 +114,7 @@ gmt begin ../../figure/cumulativestrain_snap_dilatation/gps_cumulativestrain_dil
 	gmt psxy ../../data/historicalfaults.txt -JM${size} -R${range} -W1.0,${sanandreascolor}
 
 	# plot triangular edges
-	gmt plot ${edgefile} -JM${size} -R${range} -W0.15p -Cblack -t50
+	gmt plot ${edgefile} -JM${size} -R${range} -W0.23,140/140/140
 
 	# plot GPS stations and BP network
 	gmt psxy ${GPSsitefile} -JM${size} -R${range} -Sr${gpssize} -G${stationcolor} #-W0,0/0/200
@@ -150,7 +150,7 @@ gmt begin ../../figure/cumulativestrain_snap_shear/gps_cumulativestrain_maxshear
 	gmt psxy ../../data/historicalfaults.txt -JM${size} -R${range} -W1.0,${sanandreascolor}
 
 	# plot triangular edges
-	gmt plot ${edgefile} -JM${size} -R${range} -W0.15p -Cblack -t50
+	gmt plot ${edgefile} -JM${size} -R${range} -W0.23,140/140/140
 
 	# plot GPS stations and BP network
 	gmt psxy ${GPSsitefile} -JM${size} -R${range} -Sr${gpssize} -G${stationcolor} #-W0,0/0/200

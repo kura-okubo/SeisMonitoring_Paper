@@ -89,3 +89,7 @@
 
 
 - **Figure S14.** The scaling of parallelization. Run [`Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Appx/Scaling_Frontera/plot_scaling_parallelization_master.ipynb).
+
+- **Figure S15.** The spatial distribution of dilatational strain at Parkfield. . Run [`Others/coseismic_strain/plot_strain_gmt/plot_BP_dilation.sh`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Others/coseismic_strain/plot_strain_gmt/plot_BP_dilation.sh) and [`Others/coseismic_strain/compute_strain_BP/code/02_plot_dilation_cross-section_BP.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Others/coseismic_strain/compute_strain_BP/code/02_plot_dilation_cross-section_BP.ipynb) to plot the horizontal distribution and cross-section of the strain. See the details in [`Others/coseismic_strain/README.md`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Others/coseismic_strain/README.md).
+
+- **Table S1.** Run [`Others/interstation_distance/compute_stationdistances.ipynb`](https://github.com/kura-okubo/SeisMonitoring_Paper/blob/master/Others/interstation_distance/compute_stationdistances.ipynb).
